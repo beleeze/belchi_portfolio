@@ -8,15 +8,66 @@ body {
 
 .container {
   display: flex;
+  flex-direction: column;
   min-height: 100vh;
-  overflow: hidden;
-  flex-direction: column; /* Stack vertically by default */
 }
 
-.image {
-  background-size: cover;
-  background-position: center;
-  height: 300px;
+/* Header */
+header {
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0c0c0b;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav {
+  display: none;
+}
+
+nav.active {
+  display: block;
+  position: absolute;
+  top: 60px;
+  right: 15px;
+  background-color: #0c0c0b;
+  border: 1px solid #333;
+  border-radius: 5px;
+  padding: 10px;
+  z-index: 1000;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+nav li {
+  margin: 10px 0;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.1em;
+}
+
+nav a:hover {
+  color: #ddd;
+}
+
+.menu-toggle {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.5em;
+  cursor: pointer;
 }
 
 /* Left Side (Image) */
@@ -29,6 +80,7 @@ body {
   overflow: hidden;
   position: relative;
   min-height: 200px;
+  max-height: 300px; /* Limit height to prevent overflow */
 }
 
 .profile-image {
@@ -45,9 +97,10 @@ body {
 }
 
 .profile-image img {
-  max-width: 100%;
-  height: auto;
-  object-fit: contain;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure image fills container without distortion */
+  object-position: center;
 }
 
 /* Right Side (Content) */
@@ -59,66 +112,9 @@ body {
   flex-grow: 1;
 }
 
-/* Header */
-header {
-  padding: 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: sticky;
-  top: 0;
-  background-color: #0c0c0b;
-  z-index: 1000;
-}
-
-nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-}
-
-nav li {
-  margin-left: 20px;
-}
-
-nav a {
-  color: #fff;
-  text-decoration: none;
-}
-
-.menu-toggle {
-  background: none;
-  border: none;
-  color: #fff;
-  font-size: 1.5em;
-  cursor: pointer;
-  display: none;
-}
-
-nav ul {
-  display: none;
-  position: absolute;
-  top: 60px;
-  right: 20px;
-  background-color: #0c0c0b;
-  flex-direction: column;
-  padding: 10px;
-  border: 1px solid #333;
-  border-radius: 5px;
-}
-
-nav ul.active {
-  display: flex;
-}
-
-nav li {
-  margin: 10px 0;
-}
-
 /* Content */
 .content {
-  padding: 40px;
+  padding: 20px;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
@@ -126,9 +122,14 @@ nav li {
 }
 
 .content h1 {
-  font-size: 2.5em; /* Reduced for better mobile fit */
-  margin-bottom: 20px;
+  font-size: 2.5em;
+  margin-bottom: 15px;
   font-weight: bold;
+}
+
+.content p {
+  font-size: 1em;
+  margin-bottom: 10px;
 }
 
 /* Slideshow Container */
@@ -139,42 +140,45 @@ nav li {
 
 .slide {
   width: 100%;
-  min-height: 50vh; /* Minimum height for mobile */
-  opacity: 1; /* Remove transition for simplicity */
-  display: none;
-  background-size: cover;
-  background-position: center;
+  min-height: 50vh;
   padding: 20px;
   box-sizing: border-box;
-}
-
-.slide.active {
-  display: block;
+  background-size: cover;
+  background-position: center;
 }
 
 .slide-title {
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
-  padding: 10px;
+  padding: 15px;
   text-align: center;
   font-size: 1.2em;
+  border-radius: 5px;
+}
+
+.slide-title h1 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.slide-title h2 {
+  font-size: 1.3em;
+  margin-bottom: 10px;
 }
 
 /* Contact Slide */
-#contact-slide {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+#contact {
   background-color: #222;
 }
 
 .contact-container {
   display: flex;
   width: 90%;
+  margin: 0 auto;
   background: #080808;
   border-radius: 10px;
   overflow: hidden;
-  flex-direction: column; /* Stack on mobile */
+  flex-direction: column;
 }
 
 .contact-form {
@@ -182,13 +186,12 @@ nav li {
   padding: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   background: #444;
   color: white;
 }
 
 .contact-form h2 {
-  font-size: 1.5em; /* Reduced for mobile */
+  font-size: 1.5em;
   margin-bottom: 15px;
 }
 
@@ -199,6 +202,7 @@ nav li {
   margin-bottom: 10px;
   border: none;
   border-radius: 5px;
+  box-sizing: border-box;
 }
 
 .contact-form textarea {
@@ -228,7 +232,7 @@ nav li {
   background-position: center;
 }
 
-/* Responsive Design */
+/* Responsive Design for Desktop */
 @media (min-width: 769px) {
   .container {
     flex-direction: row;
@@ -237,6 +241,7 @@ nav li {
   .left-side {
     width: 33.333%;
     min-height: 100vh;
+    max-height: none;
   }
 
   .right-side {
@@ -250,27 +255,48 @@ nav li {
 
   .slide {
     min-height: 100vh;
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    transition: opacity 0.5s ease;
   }
 
-  .slide.active {
-    opacity: 1;
+  header {
+    padding: 20px;
   }
 
-  header nav {
+  nav {
     display: flex;
+  }
+
+  nav.active {
+    position: static;
+    border: none;
+    padding: 0;
+  }
+
+  nav ul {
+    flex-direction: row;
+  }
+
+  nav li {
+    margin: 0 20px;
   }
 
   .menu-toggle {
     display: none;
   }
 
+  .content {
+    padding: 40px;
+  }
+
   .content h1 {
     font-size: 3em;
+  }
+
+  .slide-title h1 {
+    font-size: 2em;
+  }
+
+  .slide-title h2 {
+    font-size: 1.5em;
   }
 
   .contact-container {
