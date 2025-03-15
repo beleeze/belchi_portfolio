@@ -94,54 +94,54 @@
     </div>
   </div>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const leftSide = document.querySelector('.left-side');
-      leftSide.classList.add('slide-in');
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const leftSide = document.querySelector('.left-side');
+    leftSide.classList.add('slide-in');
 
-      const menuToggle = document.querySelector('.menu-toggle');
-      const nav = document.querySelector('nav ul');
-      menuToggle.addEventListener('click', () => {
-        nav.classList.toggle('active');
-      });
+    const menuToggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('nav ul');
+    menuToggle.addEventListener('click', () => {
+      nav.classList.toggle('active');
     });
+  });
 
-    const slides = document.querySelectorAll('.slide');
-    let currentSlide = 0;
+  const slides = document.querySelectorAll('.slide');
+  let currentSlide = 0;
 
-    function showSlide(index) {
-      slides.forEach(slide => slide.classList.remove('active'));
-      slides[index].classList.add('active');
-    }
+  function showSlide(index) {
+    slides.forEach(slide => slide.classList.remove('active'));
+    slides[index].classList.add('active');
+  }
 
-    function nextSlide() {
-      currentSlide = (currentSlide + 1) % slides.length;
-      showSlide(currentSlide);
-    }
-
-    function prevSlide() {
-      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-      showSlide(currentSlide);
-    }
-
+  function nextSlide() {
+    currentSlide = (currentSlide + 1) % slides.length;
     showSlide(currentSlide);
+  }
 
-    // Add touch event handling
-    let touchStartX = 0;
-    let touchEndX = 0;
+  function prevSlide() {
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    showSlide(currentSlide);
+  }
 
-    document.querySelector('.slides-container').addEventListener('touchstart', e => {
-      touchStartX = e.changedTouches[0].screenX;
-    }, false);
+  showSlide(currentSlide);
 
-    document.querySelector('.slides-container').addEventListener('touchend', e => {
-      touchEndX = e.changedTouches[0].screenX;
-      if (touchStartX - touchEndX > 50) {
-        nextSlide();
-      } else if (touchEndX - touchStartX > 50) {
-        prevSlide();
-      }
-    }, false);
-  </script>
+  // Add touch event handling
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  document.querySelector('.slides-container').addEventListener('touchstart', e => {
+    touchStartX = e.changedTouches[0].screenX;
+  }, false);
+
+  document.querySelector('.slides-container').addEventListener('touchend', e => {
+    touchEndX = e.changedTouches[0].screenX;
+    if (touchStartX - touchEndX > 50) {
+      nextSlide();
+    } else if (touchEndX - touchStartX > 50) {
+      prevSlide();
+    }
+  }, false);
+</script>
 </body>
 </html>
