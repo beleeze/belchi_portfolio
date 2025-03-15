@@ -414,4 +414,77 @@ nav ul.active {
     -webkit-overflow-scrolling: touch;
     padding-bottom: 10px;
   }
+
+  nav ul {
+    background-color: rgba(12, 12, 11, 0.95);
+    width: 100%;
+    left: 0;
+    border-radius: 0 0 5px 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  }
+
+  nav ul.active {
+    display: flex;
+    z-index: 1000;
+  }
+
+  nav li {
+    margin: 10px 0;
+    text-align: center;
+  }
+}
+
+/* Add smaller screen breakpoint */
+@media (max-width: 480px) {
+  .content h1 {
+    font-size: 2em;
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .button {
+    margin-right: 0;
+    text-align: center;
+  }
+
+  .contact-form {
+    padding: 15px;
+  }
+
+  .slide-title h1 {
+    font-size: 1.5em;
+  }
+
+  .slide-title h2 {
+    font-size: 1.2em;
+  }
+
+  .slide-title p {
+    font-size: 0.9em;
+  }
+
+  .nav-arrow {
+    font-size: 1.2em;
+    padding: 8px;
+  }
+}
+
+/* Improve touch interactions */
+@media (hover: none) {
+  .nav-arrow {
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+
+  .slide-preview-wrapper {
+    scroll-behavior: smooth;
+  }
+
+  .button {
+    padding: 15px 25px;
+  }
 }
