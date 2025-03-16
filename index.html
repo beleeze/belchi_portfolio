@@ -1,114 +1,202 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Macfrancis Belchi - Portfolio</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            text-align: right;
+            padding: 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+        }
+
+        .left, .middle, .right {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .left img {
+            width: 100%;
+            height: auto;
+        }
+
+        .middle h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .middle p {
+            font-size: 1em;
+            line-height: 1.5;
+        }
+
+        .right {
+            text-align: center;
+        }
+
+        .portfolio-title {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .portfolio-title .icon {
+            width: 30px;
+            margin-right: 10px;
+        }
+
+        .right h2 {
+            font-size: 1.8em;
+        }
+
+        .right p {
+            font-size: 1em;
+            margin: 10px 0;
+        }
+
+        .right .icon {
+            width: 30px;
+            margin: 10px auto;
+            display: block;
+        }
+
+        .slideshow {
+            position: relative;
+        }
+
+        .slide {
+            display: none;
+        }
+
+        .slide.active {
+            display: block;
+        }
+
+        .slide p {
+            margin-bottom: 10px;
+        }
+
+        .slide img {
+            width: 100%;
+            height: auto;
+        }
+
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: white;
+            font-size: 2em;
+            cursor: pointer;
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .left, .middle, .right {
+                width: 100%;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <div class="left-side">
-      <div class="profile-image">
-        <img src="Me.jpg" alt="Macfrancis Belchi">
-      </div>
-    </div>
+    <nav>
+        <a href="#">LinkedIn</a>
+        <a href="#">Email</a>
+    </nav>
 
-    <div class="right-side">
-      <header>
-        <button class="menu-toggle"><i class="fas fa-bars"></i></button>
-        <nav>
-          <ul>
-            <li><a href="https://www.linkedin.com/in/macfrancis-belchi-8125a28b" target="_blank">LinkedIn <i class="fab fa-linkedin"></i></a></li>
-            <li><a href="mailto:macfrancis.belchi@outlook.com">Email <i class="fas fa-envelope"></i></a></li>
-          </ul>
-        </nav>
-      </header>
-
-      <main class="content">
-        <h1>Macfrancis Belchi</h1>
-        <p>Systems Administrator specializing in managing and maintaining servers in complex environments. Proficient in deploying and administering Hyper-V virtual machines across Windows and Linux domains. Expertise includes network security, managing firewall rules and objects in Cisco and FortiGate environments, and daily operations with Microsoft Intune, Azure, Microsoft 365, Active Directory, and Azure AD.</p>
-        <div class="buttons">
-          <a href="#projects" class="button explore">Explore Projects</a>
-          <a href="#contact" class="button play">Contact Me</a>
+    <div class="container">
+        <div class="left">
+            <img src="profile.jpg" alt="Profile Image">
         </div>
-      </main>
 
-      <div class="slides-container" id="projects">
-        <div class="slide active" style="background-image: url('project3.jpg')">
-          <div class="slide-title">
-            <h2>🎯 Welcome to My Portfolio 📌</h2>
-            <p>A showcase of my projects in enterprise administration, system development, and IT solutions.</p>
-          </div>
-      </div>
-      <!-- Add more slides as necessary -->
+        <div class="middle">
+            <h1>Macfrancis Belchi</h1>
+            <p>Systems Administrator, specializing in managing and maintaining servers in complex environments. Possesses a proven ability to deploy and administer numerous virtual machines across multiple domains, covering both Windows and various Linux distributions. Expertise extends to network security, where I manage firewall rules and objects in both Cisco and FortiGate environments.</p>
+            <p>Proficient in utilizing various security and monitoring platforms, including Centreon and Zabbix, & EFT servers to ensure system health and security. Experienced with Veeam for server backups and disaster recovery. Daily operational tasks include managing Microsoft Intune, Azure, and the Microsoft 365 Admin Center, Active Directory and Azure AD.</p>
+        </div>
 
-      <div class="nav-arrow left"><i class="fas fa-chevron-left"></i></div>
-      <div class="nav-arrow right"><i class="fas fa-chevron-right"></i></div>
+        <div class="right">
+            <div class="portfolio-title">
+                <img src="target-icon.png" alt="Target Icon" class="icon">
+                <h2>Welcome to My Work Portfolio</h2>
+            </div>
+            <p>Here you will find a visually engaging snippet slideshow of my projects, at the heart of my expertise in enterprise administration, system development, and internal IT solutions. Each project showcases how organizations can leverage the value I bring for efficiency and enhanced workflows.</p>
+            <img src="pushpin.png" alt="Pushpin Icon" class="icon">
+            <div class="slideshow">
+                <button class="prev">❮</button>
+                <div class="slide">
+                    <p>Project 1: Designed and implemented a secure server infrastructure for a multi-domain environment.</p>
+                    <img src="project1.jpg" alt="Project 1">
+                </div>
+                <div class="slide">
+                    <p>Project 2: Developed a monitoring dashboard using Zabbix to enhance system reliability.</p>
+                    <img src="project2.jpg" alt="Project 2">
+                </div>
+                <div class="slide">
+                    <p>Project 3: Configured Veeam backups for disaster recovery in a corporate setting.</p>
+                    <img src="project3.jpg" alt="Project 3">
+                </div>
+                <button class="next">❯</button>
+            </div>
+        </div>
     </div>
 
-    <div class="contact-container" id="contact">
-      <div class="contact-form">
-        <h2>Contact Me</h2>
-        <form action="https://formspree.io/f/xeoajrnr" method="POST">
-          <input type="text" name="name" placeholder="Your Name" required>
-          <input type="email" name="email" placeholder="Your Email" required>
-          <textarea name="message" placeholder="Your Message" required></textarea>
-          <button type="submit">Send Message</button>
-        </form>
-      </div>
-      <div class="contact-image" style="background-image: url('me2.jpg');"></div>
-    </div>
-  </div>
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        const prevBtn = document.querySelector('.prev');
+        const nextBtn = document.querySelector('.next');
+        let currentSlide = 0;
 
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const slides = document.querySelectorAll('.slide');
-    const next = document.querySelector('.nav-arrow.right');
-    const prev = document.querySelector('.nav-arrow.left');
-    const menuToggle = document.querySelector('.menu-toggle');
-    const nav = document.querySelector('nav ul');
-    let currentSlide = 0;
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            slides[index].classList.add('active');
+        }
 
-    function showSlide(index) {
-      slides.forEach(slide => slide.classList.remove('active'));
-      slides[index].classList.add('active');
-    }
+        // Show the first slide initially
+        showSlide(currentSlide);
 
-    next.addEventListener('click', () => {
-      currentSlide = (currentSlide + 1) % slides.length;
-      showSlide(currentSlide);
-    });
+        nextBtn.addEventListener('click', () => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        });
 
-    prev.addEventListener('click', () => {
-      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-      showSlide(currentSlide);
-    });
-
-    menuToggle.addEventListener('click', () => {
-      document.querySelector('nav ul').classList.toggle('active');
-    });
-
-    let touchStartX = 0;
-    let touchEndX = 0;
-
-    document.body.addEventListener('touchstart', e => {
-      touchStartX = e.changedTouches[0].screenX;
-    });
-
-    document.body.addEventListener('touchend', e => {
-      touchEndX = e.changedTouches[0].screenX;
-      if (touchStartX - touchEndX > 50) next.click();
-      if (touchEndX - touchStartX > 50) prev.click();
-    });
-
-    menuToggle.addEventListener('click', () => {
-      document.querySelector('nav ul').classList.toggle('active');
-    });
-
-    showSlide(currentSlide);
-  });
-</script>
+        prevBtn.addEventListener('click', () => {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+        });
+    </script>
 </body>
 </html>
