@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your Portfolio</title>
+  <title>Macfrancis Belchi - Portfolio</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -11,7 +11,7 @@
   <div class="container">
     <div class="left-side">
       <div class="profile-image">
-        <img src="your-photo.jpg" alt="Your Name">
+        <img src="Me.jpg" alt="Macfrancis Belchi">
       </div>
     </div>
 
@@ -20,16 +20,16 @@
         <button class="menu-toggle"><i class="fas fa-bars"></i></button>
         <nav>
           <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="https://www.linkedin.com/in/macfrancis-belchi-8125a28b" target="_blank">LinkedIn <i class="fab fa-linkedin"></i></a></li>
+            <li><a href="mailto:macfrancis.belchi@outlook.com">Email <i class="fas fa-envelope"></i></a></li>
           </ul>
         </nav>
       </header>
 
       <main class="content">
-        <h1>Your Name</h1>
-        <p>Brief introduction about your skills and expertise.</p>
+        <h1>Macfrancis Belchi</h1>
+        <p>Systems Administrator specializing in managing and maintaining servers in complex environments. Possesses a proven ability to deploy and administer Hyper-V virtual machines across multiple domains, covering both Windows and various Linux distributions. Expertise extends to network security, managing firewall rules and objects in Cisco and FortiGate environments.</p>
+        <p>Proficient in utilizing security and monitoring platforms, including Centreon, Zscaler, and EFT servers to ensure system health and security. Experienced with Veeam for server backups and disaster recovery. Daily tasks include managing Microsoft Intune, Azure, Microsoft 365 Admin Center, Active Directory, and Azure AD.</p>
         <div class="buttons">
           <a href="#projects" class="button explore">Explore Projects</a>
           <a href="#contact" class="button play">Contact Me</a>
@@ -38,13 +38,16 @@
     </div>
 
     <div class="slides-container" id="projects">
-      <div class="slide active" style="background-image: url('project1.jpg')">
+      <!-- Copy and insert your original slide contents here from provided HTML -->
+      <!-- Slide Example -->
+      <div class="slide active" style="background-image: url('project3.jpg')">
         <div class="slide-title">
-          <h2>Project Title</h2>
-          <p>Project Description</p>
+          <h1>🎯 Welcome to My Work Portfolio 📌</h1>
+          <p>Here you will find a visually engaging snippet slideshow of my projects highlighting my expertise in enterprise administration, system development, and internal IT solutions.</p>
         </div>
       </div>
-      <!-- Add more slides as needed -->
+      <!-- Repeat for other slides provided -->
+
       <div class="nav-arrow left"><i class="fas fa-chevron-left"></i></div>
       <div class="nav-arrow right"><i class="fas fa-chevron-right"></i></div>
     </div>
@@ -52,62 +55,61 @@
     <div class="contact-container" id="contact">
       <div class="contact-form">
         <h2>Contact Me</h2>
-        <form action="https://formspree.io/your-form-id" method="POST">
+        <form action="https://formspree.io/f/xeoajrnr" method="POST">
           <input type="text" name="name" placeholder="Your Name" required>
           <input type="email" name="email" placeholder="Your Email" required>
           <textarea name="message" placeholder="Your Message" required></textarea>
-          <button type="submit">Send</button>
+          <button type="submit">Send Message</button>
         </form>
       </div>
-      <div class="contact-image" style="background-image: url('contact.jpg');"></div>
+      <div class="contact-image" style="background-image: url('me2.jpg');"></div>
     </div>
   </div>
-  document.addEventListener('DOMContentLoaded', () => {
-  const slides = document.querySelectorAll('.slide');
-  const next = document.querySelector('.nav-arrow.right');
-  const prev = document.querySelector('.nav-arrow.left');
-  const menuToggle = document.querySelector('.menu-toggle');
-  const nav = document.querySelector('nav ul');
-  let currentSlide = 0;
 
-  function showSlide(index) {
-    slides.forEach(slide => slide.classList.remove('active'));
-    slides[index].classList.add('active');
-  }
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const slides = document.querySelectorAll('.slide');
+      const next = document.querySelector('.nav-arrow.right');
+      const prev = document.querySelector('.nav-arrow.left');
+      const menuToggle = document.querySelector('.menu-toggle');
+      const nav = document.querySelector('nav ul');
+      let currentSlide = 0;
 
-  next.addEventListener('click', () => {
-    currentSlide = (currentSlide + 1) % slides.length;
-    showSlide(currentSlide);
-  });
+      function showSlide(index) {
+        slides.forEach(slide => slide.classList.remove('active'));
+        slides[index].classList.add('active');
+      }
 
-  prev.addEventListener('click', () => {
-    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-    showSlide(currentSlide);
-  });
+      next.addEventListener('click', () => {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+      });
 
-  menuToggle.addEventListener('click', () => {
-    nav.classList.toggle('active');
-  });
+      prev.addEventListener('click', () => {
+        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+        showSlide(currentSlide);
+      });
 
-  // Touch Event Handling for slides
-  let touchStartX = 0;
-  let touchEndX = 0;
+      menuToggle.addEventListener('click', () => {
+        nav.classList.toggle('active');
+      });
 
-  document.querySelector('.slides-container').addEventListener('touchstart', e => {
-    touchStartX = e.changedTouches[0].screenX;
-  });
+      let touchStartX = 0;
+      let touchEndX = 0;
 
-  document.querySelector('.slides-container').addEventListener('touchend', e => {
-    touchEndX = e.changedTouches[0].screenX;
-    if (touchStartX - touchEndX > 50) next.click();
-    if (touchEndX - touchStartX > 50) prev.click();
-  });
+      document.querySelector('.slides-container').addEventListener('touchstart', e => {
+        touchStartX = e.changedTouches[0].screenX;
+      });
 
-  // Slide-in animation for profile image
-  const leftSide = document.querySelector('.left-side');
-  leftSide.classList.add('slide-in');
-});
+      document.querySelector('.slides-container').addEventListener('touchend', e => {
+        touchEndX = e.changedTouches[0].screenX;
+        if (touchStartX - touchEndX > 50) next.click();
+        if (touchEndX - touchStartX > 50) prev.click();
+      });
 
+      const leftSide = document.querySelector('.left-side');
+      leftSide.classList.add('slide-in');
+    });
+  </script>
 </body>
 </html>
-
