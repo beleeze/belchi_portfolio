@@ -1,108 +1,92 @@
+/* General Styles */
 body {
     margin: 0;
     font-family: sans-serif;
-    background-color: #000000;
+    background-color: #000;
     color: #fff;
     line-height: 1.6;
 }
 
-.container {
+.portfolio-container {
     display: flex;
     min-height: 100vh;
-    overflow: hidden;
 }
 
-/* Left Side (Image) */
-.left-side {
-    width: 33.333%;
+/* Profile Section */
+.profile-section {
+    width: 30%;
     background-color: #fdfdfd;
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
-    position: relative;
+    padding: 20px;
 }
 
 .profile-image {
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    transition: left 1.5s ease-in-out;
-}
-
-.left-side.slide-in .profile-image {
-    left: 0;
-}
-
-.profile-image img {
     max-width: 100%;
-    height: auto;
+    max-height: 80vh;
     object-fit: contain;
 }
 
-/* Right Side (Content) */
-.right-side {
-    width: 33.333%;
-    background-color: #0c0c0b;
+/* Main Content */
+.main-content {
+    width: 70%;
     display: flex;
     flex-direction: column;
+    background-color: #0c0c0b;
 }
 
 /* Header */
-header {
+.main-header {
     padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-nav ul {
+.main-header h1 {
+    font-size: 2em;
+    margin: 0;
+}
+
+/* Navigation */
+.main-nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links {
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
 }
 
-nav li {
+.nav-links li {
     margin-left: 20px;
 }
 
-nav a {
+.nav-links a {
     color: #fff;
     text-decoration: none;
 }
 
-.menu-toggle {
-    background: none;
-    border: none;
-    color: #fff;
-    font-size: 1.5em;
-    cursor: pointer;
-    display: none;
+/* Bio Section */
+.bio-section {
+    padding: 20px;
 }
 
-/* Content */
-.content {
-    padding: 40px;
+/* Slideshow Section */
+.slideshow-section {
     flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.content h1 {
-    font-size: 3em;
-    margin-bottom: 20px;
-    font-weight: bold;
-}
-
-/* Slideshow Container */
-.slides-container {
-    width: 33.333%;
-    position: relative;
     overflow: hidden;
+    position: relative;
+}
+
+.slideshow-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
 }
 
 .slide {
@@ -117,8 +101,7 @@ nav a {
     background-position: center;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Vertically center the content */
-    align-items: center; /* Horizontally center the content */
+    justify-content: flex-end; /* Align content to the bottom */
 }
 
 .slide.active {
@@ -126,15 +109,10 @@ nav a {
 }
 
 .slide-title {
-    background-color: rgba(0, 0, 0, 0.7); /* Increased Opacity */
+    background-color: rgba(0, 0, 0, 0.7);
     color: white;
-    padding: 10px;
+    padding: 20px;
     text-align: center;
-    font-size: 1.2em;
-    width: 100%; /* Make sure the title spans the full width */
-    position: absolute;
-    bottom: 0; /* Stick to the bottom */
-    left: 0;
 }
 
 /* Navigation Arrows */
@@ -159,18 +137,11 @@ nav a {
 }
 
 /* Contact Slide */
-#contact-slide {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    background-color: #222;
-}
-
 .contact-container {
     display: flex;
     width: 80%;
-    max-width: 1000px;
+    max-width: 800px;
+    margin: 20px auto;
     background: #080808;
     border-radius: 10px;
     overflow: hidden;
@@ -178,179 +149,133 @@ nav a {
 
 .contact-form {
     width: 50%;
-    padding: 40px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background: #444;
-    color: white;
 }
 
 .contact-form h2 {
-    font-size: 2em;
-    margin-bottom: 20px;
+    font-size: 1.5em;
+    margin-bottom: 10px;
 }
 
 .contact-form input,
 .contact-form textarea {
     width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
+    padding: 8px;
+    margin-bottom: 10px;
     border: none;
     border-radius: 5px;
 }
 
 .contact-form textarea {
-    height: 100px;
-    resize: none;
+    height: 80px;
+    resize: vertical;
 }
 
 .contact-form button {
     background-color: #ff5a5f;
     color: white;
-    padding: 10px;
+    padding: 8px 12px;
     border: none;
     cursor: pointer;
-    font-size: 1.1em;
     border-radius: 5px;
 }
 
-.contact-form button:hover {
-    background-color: #ff767d;
-}
-
-/* Contact Image */
 .contact-image {
     width: 50%;
     background-size: cover;
     background-position: center;
 }
 
-/* Responsive Design */
+/* Mobile Styles */
 @media (max-width: 768px) {
-    .container {
+    .portfolio-container {
         flex-direction: column;
-        min-height: auto; /* Changed from 100vh */
     }
 
-    .left-side {
+    .profile-section {
         width: 100%;
-        height: auto; /* Adjusted height */
+        padding: 10px;
     }
 
-    .right-side {
+    .profile-image {
+        max-height: 40vh;
+        object-fit: contain;
+    }
+
+    .main-content {
         width: 100%;
     }
 
-    .slides-container {
-        width: 100%;
-        height: auto;
+    .main-header {
+        flex-direction: column;
+        align-items: flex-start;
     }
 
-    header nav {
-        display: none; /* HIDE MENU */
+    .main-header h1 {
+        margin-bottom: 10px;
+    }
+
+    .main-nav {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .nav-links {
+        display: none; /* Hide nav links by default */
+        flex-direction: column;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        position: absolute;
+        top: 100%;
+        left: 0;
+    }
+
+    .nav-links.active {
+        display: flex; /* Show nav links when active */
+    }
+
+    .nav-links li {
+        margin: 0;
+        padding: 10px;
+        text-align: center;
+        border-bottom: 1px solid #444;
+    }
+
+    .nav-links li:last-child {
+        border-bottom: none;
     }
 
     .menu-toggle {
         display: block;
-        position: absolute;
-        top: 20px;
-        right: 20px;
-    }
-
-    nav ul {
-        display: none; /* HIDE MENU */
-        position: absolute;
-        top: 60px;
-        right: 20px;
-        background-color: #0c0c0b;
-        flex-direction: column;
-        padding: 10px;
-        z-index: 1000; /* Ensure it's above other elements */
-    }
-
-    nav ul.active {
-        display: flex; /* SHOW MENU */
-    }
-
-    nav li {
-        margin: 10px 0;
-        text-align: center;
-    }
-
-    .content {
-        padding: 20px;
-    }
-
-    .content h1 {
-        font-size: 2.5em;
-    }
-
-    .slide {
-        position: relative; /* Add this */
-        opacity: 1;
-        display: none;
-        height: auto; /* Adjust height for content */
-    }
-
-    .slide.active {
-        display: flex;
-        flex-direction: column; /* Stack content vertically */
-    }
-
-    .nav-arrow {
+        background: none;
+        border: none;
+        color: #fff;
         font-size: 1.5em;
+        cursor: pointer;
+    }
+
+    .bio-section {
+        padding: 10px;
+    }
+
+    .slide-title {
+        padding: 10px;
     }
 
     .contact-container {
         flex-direction: column;
+        width: 95%;
     }
 
     .contact-form,
     .contact-image {
         width: 100%;
-        height: auto;
-    }
-
-   .profile-image img {
-        object-fit: cover; /* Changed to cover */
-        width: 100%; /* Ensure the image takes up full width */
-        height: 100%; /* Ensure the image takes up full height */
     }
 
     .contact-image {
         height: 200px;
-        background-size: cover;
-    }
-}
-
-@media (max-width: 480px) {
-    .content h1 {
-        font-size: 2em;
-    }
-
-    .contact-form {
-        padding: 20px;
-    }
-
-    .contact-form h2 {
-        font-size: 1.5em;
-    }
-
-    .slide-title h1 {
-        font-size: 1.5em;
-    }
-
-    .slide-title h2 {
-        font-size: 1.2em;
-    }
-
-    .slide-title p {
-        font-size: 0.9em;
-    }
-
-    .nav-arrow {
-        font-size: 1.2em;
-        padding: 8px;
     }
 }
