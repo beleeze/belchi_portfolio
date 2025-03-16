@@ -8,101 +8,111 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <div class="container">
-        <div class="left-side">
-            <div class="profile-image">
-                <img src="Me.jpg" alt="Macfrancis Belchi">
-            </div>
-        </div>
-        <div class="right-side">
-            <header>
-                <nav>
-                    <ul>
-                        <li><a href="https://www.linkedin.com/in/macfrancis-belchi-8125a28b" target="_blank">LinkedIn <i class="fab fa-linkedin w3-hover-opacity"></i></a></li>
-                        <li><a href="mailto:macfrancis.belchi@outlook.com">Email <i class="fas fa-envelope w3-hover-opacity"></i></a></li>
+    <div class="portfolio-container">
+
+        <!-- Left Side: Profile -->
+        <aside class="profile-section">
+            <img src="Me.jpg" alt="Macfrancis Belchi" class="profile-image">
+        </aside>
+
+        <!-- Main Content: Bio and Slideshow -->
+        <main class="main-content">
+
+            <!-- Header: Navigation -->
+            <header class="main-header">
+                <h1>Macfrancis Belchi</h1>
+                <nav class="main-nav">
+                    <button class="menu-toggle"><i class="fas fa-bars"></i></button>
+                    <ul class="nav-links">
+                        <li><a href="https://www.linkedin.com/in/macfrancis-belchi-8125a28b" target="_blank">LinkedIn <i class="fab fa-linkedin"></i></a></li>
+                        <li><a href="mailto:macfrancis.belchi@outlook.com">Email <i class="fas fa-envelope"></i></a></li>
                     </ul>
                 </nav>
-                <button class="menu-toggle"><i class="fas fa-bars"></i></button>
             </header>
-            <main class="content">
-                <h1>Macfrancis Belchi</h1>
+
+            <!-- Bio Section -->
+            <section class="bio-section">
                 <p>Systems Administrator specializing in managing and maintaining servers in complex environments. Possesses a proven ability to deploy and administer Hyper-V virtual machines across multiple domains, covering both Windows and various Linux distributions. Expertise extends to network security, where I manage firewall rules and objects in both Cisco and FortiGate environments.</p>
                 <p>Proficient in utilizing various security and monitoring platforms, including Centreon, Zscaler, and EFT servers to ensure system health and security. Experienced with Veeam for server backups and disaster recovery. Daily operational tasks include managing Microsoft Intune, Azure, the Microsoft 365 Admin Center, Active Directory, and Azure AD.</p>
-            </main>
-        </div>
-        <div class="slides-container">
-            <div class="slide active" style="background-image: url('project3.jpg')">
-                <div class="slide-title">
-                    <h1>🎯 Welcome to My Work Portfolio 📌</h1>
-                    <p>Here you will find a visually engaging snippet slideshow of my projects that highlight my expertise in enterprise administration, system development, and internal IT solutions.</p>
-                    <p>Each project showcases how organizations can leverage the value I bring for efficiency and enhanced workflows.</p>
-                </div>
-            </div>
-            <div class="slide" style="background-image: url('project5.jpg')">
-                <div class="slide-title">
-                    <h2>🔹 Multi-Platform IT Administration & Security</h2>
-                    <p>🌐 🔧 Proficient in administering and managing diverse IT platforms including Salesforce, Confluence, Jira, Manage Engine, ServiceNow, ESET, Microsoft 365, SentinelOne, Azure, GCP, AWS, NetScaler, Fortinet, Zscaler, and Cisco.</p>
-                    <p>🛠️ Experienced in cross-platform troubleshooting, security compliance enforcement, endpoint and systems performance optimization.</p>
-                </div>
-            </div>
-            <div class="slide" style="background-image: url('project2.jpg')">
-                <div class="slide-title">
-                    <h2>🔹 Asset Request Form - Virtual Machine (VM) Request</h2>
-                    <p>📄 Developed a Power Apps-based form for IT asset requests.</p>
-                    <p>🚀 Integrated into Microsoft Teams for easy access and rapid handling.</p>
-                    <p>🔄 Uses Power Automate to streamline approval workflows.</p>
-                    <p>✅ Enhances efficiency in virtual machine provisioning.</p>
-                </div>
-            </div>
-            <div class="slide" style="background-image: url('project4.jpg')">
-                <div class="slide-title">
-                    <h2>🔹 Real-Time Asset Inventory Portal</h2>
-                    <p>🌐 Collaborated on a centralized asset inventory portal for IT visibility.</p>
-                    <p>📊 Provides real-time tracking of servers, hosts, domains, and configurations.</p>
-                    <p>🛠️ Enables IT teams to monitor and manage assets effectively.</p>
-                    <p>📈 Supports comprehensive asset insights, ✨ Bringing Innovation to IT Solutions.</p>
-                </div>
-            </div>
-            <div class="slide" style="background-image: url('work3.jpg')">
-                <div class="slide-title">
-                    <h2>🔹 Helpdesk Ticketing System - Microsoft Power Apps</h2>
-                    <p>🖥️ Designed a user-friendly ticketing system for seamless IT support.</p>
-                    <p>🔗 Integrated with Microsoft Teams for direct technician communication.</p>
-                    <p>📊 Uses Microsoft Dataverse for secure data management.</p>
-                    <p>⚙️ Uses automated alerts for ticket tracking and escalation.</p>
-                </div>
-            </div>
-            <div class="slide" id="contact-slide">
-                <div class="slide-title">
-                    <h2>🔹 Thank You for Viewing 🔹</h2>
-                </div>
-                <div class="contact-container">
-                    <div class="contact-form">
-                        <h2>Contact Me</h2>
-                        <form action="https://formspree.io/f/xeoajrnr" method="POST">
-                            <input type="text" name="name" placeholder="Your Name" required>
-                            <input type="email" name="email" placeholder="Your Email" required>
-                            <textarea name="message" placeholder="Your Message" required></textarea>
-                            <button type="submit">Send Message</button>
-                        </form>
+            </section>
+
+            <!-- Slideshow Section -->
+            <section class="slideshow-section">
+                <div class="slideshow-container">
+                    <div class="slide active" style="background-image: url('project3.jpg')">
+                        <div class="slide-title">
+                            <h1>🎯 Welcome to My Work Portfolio 📌</h1>
+                            <p>Here you will find a visually engaging snippet slideshow of my projects that highlight my expertise in enterprise administration, system development, and internal IT solutions.</p>
+                            <p>Each project showcases how organizations can leverage the value I bring for efficiency and enhanced workflows.</p>
+                        </div>
                     </div>
-                    <div class="contact-image" style="background-image: url('me2.jpg');"></div>
+                    <div class="slide" style="background-image: url('project5.jpg')">
+                        <div class="slide-title">
+                            <h2>🔹 Multi-Platform IT Administration & Security</h2>
+                            <p>🌐 🔧 Proficient in administering and managing diverse IT platforms including Salesforce, Confluence, Jira, Manage Engine, ServiceNow, ESET, Microsoft 365, SentinelOne, Azure, GCP, AWS, NetScaler, Fortinet, Zscaler, and Cisco.</p>
+                            <p>🛠️ Experienced in cross-platform troubleshooting, security compliance enforcement, endpoint and systems performance optimization.</p>
+                        </div>
+                    </div>
+                    <div class="slide" style="background-image: url('project2.jpg')">
+                        <div class="slide-title">
+                            <h2>🔹 Asset Request Form - Virtual Machine (VM) Request</h2>
+                            <p>📄 Developed a Power Apps-based form for IT asset requests.</p>
+                            <p>🚀 Integrated into Microsoft Teams for easy access and rapid handling.</p>
+                            <p>🔄 Uses Power Automate to streamline approval workflows.</p>
+                            <p>✅ Enhances efficiency in virtual machine provisioning.</p>
+                        </div>
+                    </div>
+                    <div class="slide" style="background-image: url('project4.jpg')">
+                        <div class="slide-title">
+                            <h2>🔹 Real-Time Asset Inventory Portal</h2>
+                            <p>🌐 Collaborated on a centralized asset inventory portal for IT visibility.</p>
+                            <p>📊 Provides real-time tracking of servers, hosts, domains, and configurations.</p>
+                            <p>🛠️ Enables IT teams to monitor and manage assets effectively.</p>
+                            <p>📈 Supports comprehensive asset insights, ✨ Bringing Innovation to IT Solutions.</p>
+                        </div>
+                    </div>
+                    <div class="slide" style="background-image: url('work3.jpg')">
+                        <div class="slide-title">
+                            <h2>🔹 Helpdesk Ticketing System - Microsoft Power Apps</h2>
+                            <p>🖥️ Designed a user-friendly ticketing system for seamless IT support.</p>
+                            <p>🔗 Integrated with Microsoft Teams for direct technician communication.</p>
+                            <p>📊 Uses Microsoft Dataverse for secure data management.</p>
+                            <p>⚙️ Uses automated alerts for ticket tracking and escalation.</p>
+                        </div>
+                    </div>
+                    <div class="slide" id="contact-slide">
+                        <div class="slide-title">
+                            <h2>🔹 Thank You for Viewing 🔹</h2>
+                        </div>
+                        <div class="contact-container">
+                            <div class="contact-form">
+                                <h2>Contact Me</h2>
+                                <form action="https://formspree.io/f/xeoajrnr" method="POST">
+                                    <input type="text" name="name" placeholder="Your Name" required>
+                                    <input type="email" name="email" placeholder="Your Email" required>
+                                    <textarea name="message" placeholder="Your Message" required></textarea>
+                                    <button type="submit">Send Message</button>
+                                </form>
+                            </div>
+                            <div class="contact-image" style="background-image: url('me2.jpg');"></div>
+                        </div>
+                    </div>
+                    <div class="nav-arrow left" onclick="prevSlide()">◀</div>
+                    <div class="nav-arrow right" onclick="nextSlide()">▶</div>
                 </div>
-            </div>
-            <div class="nav-arrow left" onclick="prevSlide()">◀</div>
-            <div class="nav-arrow right" onclick="nextSlide()">▶</div>
-        </div>
+            </section>
+
+        </main>
+
     </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const leftSide = document.querySelector('.left-side');
-            leftSide.classList.add('slide-in');
-
             const menuToggle = document.querySelector('.menu-toggle');
-            const nav = document.querySelector('nav ul');
+            const navLinks = document.querySelector('.nav-links');
+
             menuToggle.addEventListener('click', () => {
-                nav.classList.toggle('active');
+                navLinks.classList.toggle('active');
             });
         });
 
@@ -130,11 +140,11 @@
         let touchStartX = 0;
         let touchEndX = 0;
 
-        document.querySelector('.slides-container').addEventListener('touchstart', e => {
+        document.querySelector('.slideshow-container').addEventListener('touchstart', e => {
             touchStartX = e.changedTouches[0].screenX;
         }, false);
 
-        document.querySelector('.slides-container').addEventListener('touchend', e => {
+        document.querySelector('.slideshow-container').addEventListener('touchend', e => {
             touchEndX = e.changedTouches[0].screenX;
             if (touchStartX - touchEndX > 50) {
                 nextSlide();
