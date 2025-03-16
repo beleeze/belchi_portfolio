@@ -62,8 +62,52 @@
       <div class="contact-image" style="background-image: url('contact.jpg');"></div>
     </div>
   </div>
+  document.addEventListener('DOMContentLoaded', () => {
+  const slides = document.querySelectorAll('.slide');
+  const next = document.querySelector('.nav-arrow.right');
+  const prev = document.querySelector('.nav-arrow.left');
+  const menuToggle = document.querySelector('.menu-toggle');
+  const nav = document.querySelector('nav ul');
+  let currentSlide = 0;
 
-  <script src="script.js"></script>
+  function showSlide(index) {
+    slides.forEach(slide => slide.classList.remove('active'));
+    slides[index].classList.add('active');
+  }
+
+  next.addEventListener('click', () => {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+  });
+
+  prev.addEventListener('click', () => {
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    showSlide(currentSlide);
+  });
+
+  menuToggle.addEventListener('click', () => {
+    nav.classList.toggle('active');
+  });
+
+  // Touch Event Handling for slides
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  document.querySelector('.slides-container').addEventListener('touchstart', e => {
+    touchStartX = e.changedTouches[0].screenX;
+  });
+
+  document.querySelector('.slides-container').addEventListener('touchend', e => {
+    touchEndX = e.changedTouches[0].screenX;
+    if (touchStartX - touchEndX > 50) next.click();
+    if (touchEndX - touchStartX > 50) prev.click();
+  });
+
+  // Slide-in animation for profile image
+  const leftSide = document.querySelector('.left-side');
+  leftSide.classList.add('slide-in');
+});
+
 </body>
 </html>
 
