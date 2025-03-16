@@ -126,12 +126,15 @@ nav a {
 }
 
 .slide-title {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.7); /* Increased Opacity */
     color: white;
     padding: 10px;
     text-align: center;
     font-size: 1.2em;
     width: 100%; /* Make sure the title spans the full width */
+    position: absolute;
+    bottom: 0; /* Stick to the bottom */
+    left: 0;
 }
 
 /* Navigation Arrows */
@@ -232,8 +235,7 @@ nav a {
 
     .left-side {
         width: 100%;
-        height: 30vh;
-        min-height: 200px;
+        height: auto; /* Adjusted height */
     }
 
     .right-side {
@@ -285,7 +287,7 @@ nav a {
     }
 
     .slide {
-        position: relative;
+        position: relative; /* Add this */
         opacity: 1;
         display: none;
         height: auto; /* Adjust height for content */
@@ -308,6 +310,12 @@ nav a {
     .contact-image {
         width: 100%;
         height: auto;
+    }
+
+   .profile-image img {
+        object-fit: cover; /* Changed to cover */
+        width: 100%; /* Ensure the image takes up full width */
+        height: 100%; /* Ensure the image takes up full height */
     }
 
     .contact-image {
