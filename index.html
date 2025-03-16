@@ -28,25 +28,21 @@
 
       <main class="content">
         <h1>Macfrancis Belchi</h1>
-        <p>Systems Administrator specializing in managing and maintaining servers in complex environments. Possesses a proven ability to deploy and administer Hyper-V virtual machines across multiple domains, covering both Windows and various Linux distributions. Expertise extends to network security, managing firewall rules and objects in Cisco and FortiGate environments.</p>
-        <p>Proficient in utilizing security and monitoring platforms, including Centreon, Zscaler, and EFT servers to ensure system health and security. Experienced with Veeam for server backups and disaster recovery. Daily tasks include managing Microsoft Intune, Azure, Microsoft 365 Admin Center, Active Directory, and Azure AD.</p>
+        <p>Systems Administrator specializing in managing and maintaining servers in complex environments. Proficient in deploying and administering Hyper-V virtual machines across Windows and Linux domains. Expertise includes network security, managing firewall rules and objects in Cisco and FortiGate environments, and daily operations with Microsoft Intune, Azure, Microsoft 365, Active Directory, and Azure AD.</p>
         <div class="buttons">
           <a href="#projects" class="button explore">Explore Projects</a>
           <a href="#contact" class="button play">Contact Me</a>
         </div>
       </main>
-    </div>
 
-    <div class="slides-container" id="projects">
-      <!-- Copy and insert your original slide contents here from provided HTML -->
-      <!-- Slide Example -->
-      <div class="slide active" style="background-image: url('project3.jpg')">
-        <div class="slide-title">
-          <h1>🎯 Welcome to My Work Portfolio 📌</h1>
-          <p>Here you will find a visually engaging snippet slideshow of my projects highlighting my expertise in enterprise administration, system development, and internal IT solutions.</p>
-        </div>
+      <div class="slides-container" id="projects">
+        <div class="slide active" style="background-image: url('project3.jpg')">
+          <div class="slide-title">
+            <h2>🎯 Welcome to My Portfolio 📌</h2>
+            <p>A showcase of my projects in enterprise administration, system development, and IT solutions.</p>
+          </div>
       </div>
-      <!-- Repeat for other slides provided -->
+      <!-- Add more slides as necessary -->
 
       <div class="nav-arrow left"><i class="fas fa-chevron-left"></i></div>
       <div class="nav-arrow right"><i class="fas fa-chevron-right"></i></div>
@@ -66,50 +62,53 @@
     </div>
   </div>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const slides = document.querySelectorAll('.slide');
-      const next = document.querySelector('.nav-arrow.right');
-      const prev = document.querySelector('.nav-arrow.left');
-      const menuToggle = document.querySelector('.menu-toggle');
-      const nav = document.querySelector('nav ul');
-      let currentSlide = 0;
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const slides = document.querySelectorAll('.slide');
+    const next = document.querySelector('.nav-arrow.right');
+    const prev = document.querySelector('.nav-arrow.left');
+    const menuToggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('nav ul');
+    let currentSlide = 0;
 
-      function showSlide(index) {
-        slides.forEach(slide => slide.classList.remove('active'));
-        slides[index].classList.add('active');
-      }
+    function showSlide(index) {
+      slides.forEach(slide => slide.classList.remove('active'));
+      slides[index].classList.add('active');
+    }
 
-      next.addEventListener('click', () => {
-        currentSlide = (currentSlide + 1) % slides.length;
-        showSlide(currentSlide);
-      });
-
-      prev.addEventListener('click', () => {
-        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-        showSlide(currentSlide);
-      });
-
-      menuToggle.addEventListener('click', () => {
-        nav.classList.toggle('active');
-      });
-
-      let touchStartX = 0;
-      let touchEndX = 0;
-
-      document.querySelector('.slides-container').addEventListener('touchstart', e => {
-        touchStartX = e.changedTouches[0].screenX;
-      });
-
-      document.querySelector('.slides-container').addEventListener('touchend', e => {
-        touchEndX = e.changedTouches[0].screenX;
-        if (touchStartX - touchEndX > 50) next.click();
-        if (touchEndX - touchStartX > 50) prev.click();
-      });
-
-      const leftSide = document.querySelector('.left-side');
-      leftSide.classList.add('slide-in');
+    next.addEventListener('click', () => {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
     });
-  </script>
+
+    prev.addEventListener('click', () => {
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      showSlide(currentSlide);
+    });
+
+    menuToggle.addEventListener('click', () => {
+      document.querySelector('nav ul').classList.toggle('active');
+    });
+
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    document.body.addEventListener('touchstart', e => {
+      touchStartX = e.changedTouches[0].screenX;
+    });
+
+    document.body.addEventListener('touchend', e => {
+      touchEndX = e.changedTouches[0].screenX;
+      if (touchStartX - touchEndX > 50) next.click();
+      if (touchEndX - touchStartX > 50) prev.click();
+    });
+
+    menuToggle.addEventListener('click', () => {
+      document.querySelector('nav ul').classList.toggle('active');
+    });
+
+    showSlide(currentSlide);
+  });
+</script>
 </body>
 </html>
