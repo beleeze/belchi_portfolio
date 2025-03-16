@@ -186,35 +186,30 @@ nav ul.active {
   display: flex;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
-  padding-bottom: 15px;
-  -webkit-overflow-scrolling: touch;
 }
 
 .slide-preview {
-  width: 350px;
-  flex-shrink: 0;
-  scroll-snap-align: start;
+  width: 200px;
   margin-right: 10px;
-  border: 1px solid #111111;
-  border-radius: 5px;
-  overflow: hidden;
+  scroll-snap-align: start;
 }
 
 .slide-preview img {
   width: 100%;
   height: auto;
-  display: block;
+  border-radius: 5px;
 }
 
 .slide-title {
-  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 10px;
   text-align: center;
   font-size: 1.2em;
 }
 
 /* Contact Slide */
 #contact-slide {
-  display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
