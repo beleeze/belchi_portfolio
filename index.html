@@ -1,170 +1,198 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Macfrancis Belchi - Portfolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>Macfrancis Belchi | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        /* CSS Reset */
-        *, *::before, *::after {
-            box-sizing: border-box;
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
 
         body {
-            background-color: #121212;
-            color: #fff;
-            font-family: 'Roboto', sans-serif;
+            background: #0a0a0a;
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
             line-height: 1.6;
-            transition: background-color 0.3s ease;
+            overflow-x: hidden;
         }
 
-        /* Dark Mode Toggle */
-        .dark-mode-toggle {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background-color: #333;
-            color: #fff;
-            border: none;
-            padding: 10px 15px;
-            border-radius: 5px;
-            cursor: pointer;
+        nav {
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: flex-end;
+            gap: 2rem;
+            background: rgba(0, 0, 0, 0.8);
+            position: sticky;
+            top: 0;
             z-index: 100;
         }
 
-        /* Navigation */
-        nav {
-            background-color: #212121;
-            padding: 1rem 0;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-            position: sticky;
-            top: 0;
-            z-index: 10;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: flex-end;
-            padding-right: 2rem;
-        }
-
-        nav li {
-            margin-left: 2rem;
-        }
-
         nav a {
-            color: #fff;
+            color: #ffffff;
             text-decoration: none;
+            font-weight: 600;
             transition: color 0.3s ease;
-            display: flex;
-            align-items: center;
         }
 
         nav a:hover {
-            color: #d84b6b;
+            color: #4CAF50;
         }
 
-        nav i {
-            margin-right: 0.5rem;
-            font-size: 1.2rem;
-        }
-
-        /* Container */
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             padding: 2rem;
             display: grid;
-            grid-template-columns: 1fr 2fr 1fr; /* Define columns */
+            grid-template-columns: 1fr 2fr 1fr;
             gap: 2rem;
-        }
-
-        /* Left Section (Image) */
-        .left {
-            text-align: center;
         }
 
         .left img {
             width: 100%;
-            max-width: 300px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s ease;
-            border-radius: 10px; /* Add some corner rounding */
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            object-fit: cover;
         }
 
-        .left img:hover {
-            transform: scale(1.05);
-        }
-
-        /* Middle Section (Bio) */
         .middle {
-            padding: 2rem;
+            padding: 1rem;
         }
 
         .middle h1 {
             font-size: 2.5rem;
             margin-bottom: 1rem;
-            color: #d84b6b;
+            color: #4CAF50;
         }
 
         .middle p {
             font-size: 1.1rem;
-            line-height: 1.7;
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
         }
 
-        /* Right Section (Portfolio) */
         .right {
-            text-align: center;
-            padding: 2rem;
+            padding: 1rem;
         }
 
         .portfolio-title {
             display: flex;
             align-items: center;
-            justify-content: center;
-            margin-bottom: 1rem;
+            gap: 1rem;
+            margin-bottom: 2rem;
         }
 
-        .portfolio-title .icon {
-            width: 30px;
-            margin-right: 10px;
+        .portfolio-title h2 {
+            font-size: 1.8rem;
+            background: linear-gradient(45deg, #4CAF50, #81C784);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        .right h2 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        .right p {
-            font-size: 1.1rem;
-            margin: 1rem 0;
-        }
-
-        /* Slideshow */
         .slideshow {
             position: relative;
-            overflow: hidden;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1.5rem;
+            border-radius: 12px;
+            backdrop-filter: blur(5px);
         }
 
         .slide {
             display: none;
-            padding: 1.5rem;
-            text-align: left;
+            animation: fadeIn 0.5s ease;
         }
 
         .slide.active {
             display: block;
-            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .slide h3 {
+            color: #4CAF50;
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        .slide p {
+            margin-bottom: 0.8rem;
+            font-size: 1rem;
+        }
+
+        .slide img {
+            width: 100%;
+            border-radius: 8px;
+            margin-top: 1rem;
+        }
+
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .prev:hover, .next:hover {
+            background: #4CAF50;
+        }
+
+        .prev { left: -1rem; }
+        .next { right: -1rem; }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .contact-form {
+            background: #1a1a1a;
+            padding: 2rem;
+            border-radius: 12px;
+        }
+
+        .contact-form h2 {
+            color: #4CAF50;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 0.8rem;
+            margin-bottom: 1rem;
+            background: #333;
+            border: 1px solid #444;
+            border-radius: 6px;
+            color: white;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .contact-form button {
+            background: #4CAF50;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .contact-form button:hover {
+            transform: scale(1.05);
+        }
+
+        .contact-image {
+            background: url('me2.jpg') center/cover no-repeat;
+            border-radius: 12px;
+            min-height: 300px;
         }
 
         @keyframes fadeIn {
@@ -172,263 +200,81 @@
             to { opacity: 1; }
         }
 
-        .slide h3 {
-            font-size: 1.5rem;
-            margin-bottom: 0.75rem;
-            color: #d84b6b;
+        @media (max-width: 1024px) {
+            .container {
+                grid-template-columns: 1fr 2fr;
+            }
+            .right { grid-column: span 2; }
         }
 
-        .slide p {
-            margin-bottom: 0.5rem;
-        }
-
-        .slide img {
-            width: 100%;
-            height: auto;
-            border-radius: 5px;
-            margin-top: 1rem;
-        }
-
-        /* Slideshow Buttons */
-        .prev, .next {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: rgba(0, 0, 0, 0.5);
-            border: none;
-            color: #fff;
-            font-size: 2rem;
-            cursor: pointer;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-
-        .prev:hover, .next:hover {
-            background-color: rgba(0, 0, 0, 0.8);
-        }
-
-        .prev {
-            left: 10px;
-        }
-
-        .next {
-            right: 10px;
-        }
-
-        /* Contact Slide */
-        .contact-container {
-            display: flex;
-            flex-direction: column;
-            align-items: stretch;
-        }
-
-        .contact-form {
-            background-color: #333;
-            color: #fff;
-            padding: 2rem;
-        }
-
-        .contact-form h2 {
-            text-align: center;
-            margin-bottom: 1.5rem;
-        }
-
-        .contact-form input, .contact-form textarea {
-            width: 100%;
-            padding: 1rem;
-            margin-bottom: 1rem;
-            background-color: #444;
-            border: none;
-            color: #fff;
-            border-radius: 5px;
-        }
-
-        .contact-form button {
-            background-color: #d84b6b;
-            color: #fff;
-            padding: 1rem 2rem;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-
-        .contact-form button:hover {
-            background-color: #c03957;
-        }
-
-        .contact-image {
-            background-size: cover;
-            background-position: center;
-            height: 250px;  /* Set a fixed height for the image */
-            border-radius: 5px;
-        }
-
-        /* Responsive Design - SCALABLE FONT SIZES */
         @media (max-width: 768px) {
             .container {
-                grid-template-columns: 1fr; /* Stack columns */
-                padding: 1rem;
+                grid-template-columns: 1fr;
             }
-
-            .left, .middle, .right {
-                padding: 1rem;
+            .contact-container {
+                grid-template-columns: 1fr;
             }
-
-            .left {
-                text-align: center;
-                margin-bottom: 1rem; /* Add spacing below image */
-            }
-
-            .left img {
-                max-width: 60%; /* Further increase image size on mobile */
-                margin-top:1rem;
-            }
-
-            nav ul {
-                flex-direction: column;
-                align-items: flex-end;
-                padding-right: 1rem;
-            }
-
-            nav li {
-                margin-left: 0;
-                margin-top: 0.5rem;
-            }
-
-            .middle h1 {
-                font-size: 3rem; /* Increase heading size */
-            }
-
-            .middle p {
-                font-size: 1.3rem;  /* Increase paragraph size */
-            }
-
-            .right h2 {
-                font-size: 2.75rem;  /* Increase heading size */
-            }
-
-             .right p {
-                 font-size: 1.3rem;   /* Increase paragraph size */
-              }
-
-            .slide h3 {
-                font-size: 2rem; /* Increase slide heading size */
-             }
-
-             .slide p {
-                font-size: 1.3rem; /* Increase slide paragraph size */
-             }
-
-             .contact-form h2 {
-                font-size: 2.5rem; /* Increase contact form heading size */
-             }
-
-             .contact-form input, .contact-form textarea, .contact-form button {
-               font-size: 1.3rem;  /* Increase form element size */
-            }
-
-            /* Make everything larger */
-             html {
-                font-size: 1.3vw; /* Make text resizable based on viewport width */
-             }
         }
-        /* Make everything larger on smaller phone screens */
-         @media (max-width: 500px){
-             html {
-                font-size: 1.7vw;
-             }
-
-             .left img {
-                max-width: 70%;  /*Even Larger for smaller screen*/
-             }
-         }
     </style>
 </head>
 <body>
-    <button class="dark-mode-toggle">Toggle Dark Mode</button>
-
     <nav>
-        <ul>
-            <li>
-                <a href="https://www.linkedin.com/in/macfrancis-belchi-8125a28b" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-linkedin"></i> LinkedIn
-                </a>
-            </li>
-            <li>
-                <a href="mailto:macfrancis.belchi@outlook.com">
-                    <i class="fas fa-envelope"></i> Email
-                </a>
-            </li>
-        </ul>
+        <a href="https://www.linkedin.com/in/macfrancis-belchi-8125a28b" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="mailto:macfrancis.belchi@outlook.com">Email</a>
     </nav>
 
     <div class="container">
         <div class="left">
-            <img src="Me.jpg" alt="Profile Image">
+            <img src="Me.jpg" alt="Macfrancis Belchi">
         </div>
 
         <div class="middle">
             <h1>Macfrancis Belchi</h1>
-            <p>Systems Administrator, specializing in managing and maintaining servers in complex environments. Possesses a proven ability to deploy and administer numerous virtual machines across multiple domains, covering both Windows and various Linux distributions.</p>
-            <p>Expertise extends to network security, where I manage firewall rules and objects in both Cisco and FortiGate environments. Proficient in utilizing various security and monitoring platforms, including Centreon and Zabbix, & EFT servers to ensure system health and security.</p>
-            <p>Experienced with Veeam for server backups and disaster recovery. Daily operational tasks include managing Microsoft Intune, Azure, and the Microsoft 365 Admin Center, Active Directory, and Azure AD.</p>
+            <p>Systems Administrator specializing in managing complex server environments. Expert in deploying and administering virtual machines across Windows and Linux domains.</p>
+            <p>Skilled in network security (Cisco, FortiGate), monitoring platforms (Centreon, Zabbix), and backup solutions (Veeam). Proficient in Microsoft Intune, Azure, and M365 administration.</p>
         </div>
 
         <div class="right">
             <div class="portfolio-title">
-                <img src="target-icon.png" alt="Target Icon" class="icon">
-                <h2>Welcome to My Work Portfolio</h2>
+                <img src="target-icon.png" alt="Target" class="icon">
+                <h2>Work Portfolio</h2>
             </div>
-            <p>Here you will find a visually engaging snippet slideshow of my projects, at the heart of my expertise in enterprise administration, system development, and internal IT solutions. Each project showcases how organizations can leverage the value I bring for efficiency and enhanced workflows.</p>
-            <img src="project3.jpg" alt="🖥️" class="icon">
-
             <div class="slideshow">
                 <button class="prev">❮</button>
-                <div class="slide">
+                <div class="slide active">
                     <h3>Multi-Platform IT Administration & Security</h3>
-                    <p>Proficient in administering and managing diverse IT platforms including Salesforce, Confluence, Jira, Manage Engine, ServiceNow, ESET, Microsoft 365, SentinelOne, Azure, GCP, AWS, NetScaler, Fortinet, Zscaler, and Cisco.</p>
-                    <p>Experienced in cross-platform troubleshooting, security compliance enforcement, endpoint and systems performance optimization.</p>
-                    <img src="p3.jpg" alt="Project 1">
+                    <p>Proficient in Salesforce, Confluence, Jira, Manage Engine, ServiceNow, ESET, M365, SentinelOne, Azure, GCP, AWS, NetScaler, Fortinet, Zscaler, and Cisco.</p>
+                    <p>Expert in cross-platform troubleshooting and security compliance.</p>
+                    <img src="p3.jpg" alt="IT Administration">
                 </div>
                 <div class="slide">
-                    <h3>Asset Request Form - Virtual Machine (VM) Request</h3>
-                    <p>Developed a Power Apps-based form for IT asset requests.</p>
-                    <p>Integrated into Microsoft Teams for easy access and rapid handling.</p>
-                    <p>Uses Power Automate to streamline approval workflows.</p>
-                    <p>Enhances efficiency in virtual machine provisioning.</p>
-                    <img src="p5.jpg" alt="Project 2">
+                    <h3>Asset Request Form</h3>
+                    <p>Power Apps-based form integrated with Teams and Power Automate for efficient VM provisioning.</p>
+                    <img src="p5.jpg" alt="Asset Request">
                 </div>
                 <div class="slide">
                     <h3>Real-Time Asset Inventory Portal</h3>
-                    <p>Collaborated on a centralized asset inventory portal for IT visibility.</p>
-                    <p>Provides real-time tracking of servers, hosts, domains, and configurations.</p>
-                    <p>Enables IT teams to monitor and manage assets effectively.</p>
-                    <p>Supports comprehensive asset insights, ✨ Bringing Innovation to IT Solutions.</p>
-                    <img src="p4.jpg" alt="Project 3">
+                    <p>Centralized portal for real-time tracking of IT assets and configurations.</p>
+                    <img src="p4.jpg" alt="Inventory Portal">
                 </div>
                 <div class="slide">
-                    <h3>Helpdesk Ticketing System - Microsoft Power Apps</h3>
-                    <p>Designed a user-friendly ticketing system for seamless IT support.</p>
-                    <p>Integrated with Microsoft Teams for direct technician communication.</p>
-                    <p>Uses Microsoft Dataverse for secure data management.</p>
-                    <p>Uses automated alerts for ticket tracking and escalation.</p>
-                    <img src="p6.jpg" alt="Project 4">
+                    <h3>Helpdesk Ticketing System</h3>
+                    <p>Power Apps solution with Teams integration and automated alerts.</p>
+                    <img src="p6.jpg" alt="Ticketing System">
                 </div>
                 <div class="slide">
-                    <h3>Thank You for Viewing</h3>
+                    <h3>Contact Me</h3>
                     <div class="contact-container">
                         <div class="contact-form">
-                            <h2>Contact Me</h2>
+                            <h2>Get in Touch</h2>
                             <form action="https://formspree.io/f/xeoajrnr" method="POST">
                                 <input type="text" name="name" placeholder="Your Name" required>
                                 <input type="email" name="email" placeholder="Your Email" required>
-                                <textarea name="message" placeholder="Your Message" required></textarea>
+                                <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
                                 <button type="submit">Send Message</button>
                             </form>
                         </div>
-                        <div class="contact-image" style="background-image: url('me2.jpg');"></div>
+                        <div class="contact-image"></div>
                     </div>
                 </div>
                 <button class="next">❯</button>
@@ -447,29 +293,15 @@
             slides[index].classList.add('active');
         }
 
-        // Show the first slide initially
-        showSlide(currentSlide);
-
-        nextBtn.addEventListener('click', () => {
-            currentSlide = (currentSlide + 1) % slides.length;
-            showSlide(currentSlide);
-        });
-
         prevBtn.addEventListener('click', () => {
             currentSlide = (currentSlide - 1 + slides.length) % slides.length;
             showSlide(currentSlide);
         });
 
-        // Dark Mode Toggle
-        const darkModeToggle = document.querySelector('.dark-mode-toggle');
-        darkModeToggle.addEventListener('click', () => {
-            document.body.classList.toggle('light-mode');
+        nextBtn.addEventListener('click', () => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
         });
-
-        // Prevent Form Resubmission
-        if (window.history.replaceState) {
-            window.history.replaceState(null, null, window.location.href);
-        }
     </script>
 </body>
 </html>
