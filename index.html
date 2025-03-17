@@ -18,6 +18,7 @@
             font-family: 'Inter', sans-serif;
             line-height: 1.6;
             overflow-x: hidden;
+            min-height: 100vh;
         }
 
         nav {
@@ -43,19 +44,28 @@
         }
 
         .container {
-            max-width: 1400px;
+            max-width: 1600px; /* Increased for better desktop scaling */
             margin: 0 auto;
             padding: 2rem;
             display: grid;
-            grid-template-columns: 1fr 2fr 1fr;
+            grid-template-columns: minmax(0, 1fr) minmax(0, 2fr) minmax(0, 1fr);
             gap: 2rem;
+            min-height: calc(100vh - 5rem); /* Ensure content fills viewport */
+        }
+
+        .left {
+            display: flex;
+            align-items: center;
         }
 
         .left img {
             width: 100%;
+            max-width: 400px; /* Added max-width to control size */
+            height: auto;
             border-radius: 12px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
             object-fit: cover;
+            display: block; /* Ensure image displays on mobile */
         }
 
         .middle {
@@ -63,13 +73,13 @@
         }
 
         .middle h1 {
-            font-size: 2.5rem;
+            font-size: clamp(2rem, 4vw, 2.5rem); /* Responsive font size */
             margin-bottom: 1rem;
             color: #4CAF50;
         }
 
         .middle p {
-            font-size: 1.1rem;
+            font-size: clamp(1rem, 2vw, 1.1rem);
             opacity: 0.9;
             margin-bottom: 1.5rem;
         }
@@ -86,7 +96,7 @@
         }
 
         .portfolio-title h2 {
-            font-size: 1.8rem;
+            font-size: clamp(1.5rem, 3vw, 1.8rem);
             background: linear-gradient(45deg, #4CAF50, #81C784);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -112,16 +122,18 @@
         .slide h3 {
             color: #4CAF50;
             margin-bottom: 1rem;
-            font-size: 1.4rem;
+            font-size: clamp(1.2rem, 2.5vw, 1.4rem);
         }
 
         .slide p {
             margin-bottom: 0.8rem;
-            font-size: 1rem;
+            font-size: clamp(0.9rem, 1.5vw, 1rem);
         }
 
         .slide img {
             width: 100%;
+            max-width: 600px;
+            height: auto;
             border-radius: 8px;
             margin-top: 1rem;
         }
@@ -143,8 +155,8 @@
             background: #4CAF50;
         }
 
-        .prev { left: -1rem; }
-        .next { right: -1rem; }
+        .prev { left: 0; }
+        .next { right: 0; }
 
         .contact-container {
             display: grid;
@@ -161,6 +173,7 @@
         .contact-form h2 {
             color: #4CAF50;
             margin-bottom: 1.5rem;
+            font-size: clamp(1.2rem, 2vw, 1.5rem);
         }
 
         .contact-form input,
@@ -173,6 +186,7 @@
             border-radius: 6px;
             color: white;
             font-family: 'Inter', sans-serif;
+            font-size: 1rem;
         }
 
         .contact-form button {
@@ -183,6 +197,7 @@
             border-radius: 6px;
             cursor: pointer;
             transition: transform 0.2s ease;
+            width: 100%;
         }
 
         .contact-form button:hover {
@@ -192,7 +207,7 @@
         .contact-image {
             background: url('me2.jpg') center/cover no-repeat;
             border-radius: 12px;
-            min-height: 300px;
+            min-height: 200px;
         }
 
         @keyframes fadeIn {
@@ -200,19 +215,57 @@
             to { opacity: 1; }
         }
 
+        /* Desktop large screens */
+        @media (min-width: 1200px) {
+            .container {
+                padding: 3rem;
+            }
+        }
+
+        /* Tablets and smaller desktops */
         @media (max-width: 1024px) {
             .container {
                 grid-template-columns: 1fr 2fr;
+                padding: 1.5rem;
             }
-            .right { grid-column: span 2; }
+            .right { 
+                grid-column: 1 / -1; /* Span full width */
+            }
+            .left img {
+                max-width: 300px;
+            }
         }
 
+        /* Mobile devices */
         @media (max-width: 768px) {
             .container {
                 grid-template-columns: 1fr;
+                padding: 1rem;
+            }
+            .left {
+                justify-content: center;
+            }
+            .left img {
+                max-width: 100%;
+                width: 80%; /* Ensure it scales properly */
+                margin: 0 auto;
             }
             .contact-container {
                 grid-template-columns: 1fr;
+            }
+            .prev, .next {
+                font-size: 1.2rem;
+                padding: 0.3rem 0.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav {
+                padding: 1rem;
+                gap: 1rem;
+            }
+            .left img {
+                width: 100%;
             }
         }
     </style>
