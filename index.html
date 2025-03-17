@@ -170,11 +170,19 @@
 </head>
 <body>
     <nav>
-        <ul>
-            <li><a href="https://linkedin.com/in/macfrancis-belchi-8125a28b" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
-            <li><a href="mailto:macfrancis.belchi@outlook.com"><i class="fas fa-envelope"></i> Email</a></li>
-        </ul>
-    </nav>
+  <ul>
+    <li>
+      <a href="https://www.linkedin.com/in/macfrancis-belchi-8125a28b" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-linkedin w3-hover-opacity"></i> LinkedIn
+      </a>
+    </li>
+    <li>
+      <a href="mailto:macfrancis.belchi@outlook.com">
+        <i class="fas fa-envelope w3-hover-opacity"></i> Email
+      </a>
+    </li>
+  </ul>
+</nav>
 
     <div class="container">
         <div class="left">
@@ -267,6 +275,8 @@
 
     <script>
         const slides = document.querySelectorAll('.slide');
+        const prevBtn = document.querySelector('.prev');
+        const nextBtn = document.querySelector('.next');
         let currentSlide = 0;
 
         function showSlide(index) {
@@ -274,17 +284,18 @@
             slides[index].classList.add('active');
         }
 
-        document.querySelector('.next').onclick = () => {
+        // Show the first slide initially
+        showSlide(currentSlide);
+
+        nextBtn.addEventListener('click', () => {
             currentSlide = (currentSlide + 1) % slides.length;
             showSlide(currentSlide);
-        };
+        });
 
-        document.querySelector('.prev').onclick = () => {
+        prevBtn.addEventListener('click', () => {
             currentSlide = (currentSlide - 1 + slides.length) % slides.length;
             showSlide(currentSlide);
-        };
-
-        showSlide(currentSlide);
+        });
     </script>
 </body>
 </html>
