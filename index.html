@@ -3,192 +3,309 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Macfrancis Belchi Portfolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Macfrancis Belchi - Systems Administrator Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
+        /* Basic CSS for styling */
         body {
-            background-color: #0d1117;
-            color: #c9d1d9;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
             line-height: 1.6;
+        }
+
+        nav {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
         }
 
         nav ul {
             list-style: none;
-            padding: 20px;
-            display: flex;
-            justify-content: flex-end;
-            gap: 15px;
+            padding: 0;
+            margin: 0;
+            text-align: center;
         }
 
-        nav ul li a {
-            color: #58a6ff;
+        nav li {
+            display: inline;
+            margin: 0 20px;
+        }
+
+        nav a {
+            color: #fff;
             text-decoration: none;
+        }
+
+        nav a:hover {
+            opacity: 0.7;
         }
 
         .container {
             display: flex;
             flex-wrap: wrap;
             padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .left, .middle, .right {
             flex: 1;
             padding: 20px;
+            background-color: #fff;
+            margin: 10px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .left {
+            flex: 0 0 250px; /* Fixed width for the left section */
+            text-align: center;
+        }
+
+        .left img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+
+        .middle {
+            flex: 1;
+        }
+
+        .right {
+            flex: 1;
             min-width: 300px;
         }
 
-        .left img, .right img, .slide img {
-            max-width: 100%;
-            border-radius: 10px;
+        h1 {
+            color: #333;
         }
 
-        h1, h2, h3 {
-            color: #ffffff;
+        h2 {
+            color: #555;
+        }
+
+        p {
+            margin-bottom: 15px;
         }
 
         .portfolio-title {
             display: flex;
             align-items: center;
-            gap: 10px;
-            justify-content: center;
+            margin-bottom: 15px;
+        }
+
+        .portfolio-title .icon {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
         }
 
         .slideshow {
             position: relative;
-            padding: 20px 0;
+            overflow: hidden;
         }
 
         .slide {
             display: none;
-            animation: fadeIn 0.5s ease-in-out;
+            padding: 20px;
+            text-align: center;
         }
 
         .slide.active {
             display: block;
         }
 
+        .slide img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 10px;
+        }
+
         .prev, .next {
             position: absolute;
             top: 50%;
-            background: none;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #fff;
             border: none;
-            color: white;
-            font-size: 2rem;
+            padding: 10px 15px;
             cursor: pointer;
-            user-select: none;
+            z-index: 10;
         }
 
-        .prev { left: 10px; }
-        .next { right: 10px; }
+        .prev {
+            left: 10px;
+        }
 
+        .next {
+            right: 10px;
+        }
+
+        /* Contact Form Styles */
         .contact-container {
             display: flex;
-            background-color: #161b22;
-            border-radius: 10px;
-            overflow: hidden;
-        }
-
-        .contact-form, .contact-image {
-            flex: 1;
-        }
-
-        .contact-form {
+            justify-content: center;
+            align-items: center;
             padding: 20px;
         }
 
-        .contact-form input, .contact-form textarea {
+        .contact-form {
+            display: flex;
+            flex-direction: column;
             width: 100%;
+            max-width: 500px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+        }
+
+        .contact-form h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            margin-bottom: 15px;
             padding: 10px;
-            margin-bottom: 10px;
-            border-radius: 5px;
-            border: none;
-            color: #000;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .contact-form textarea {
+            resize: vertical;
+            height: 150px;
         }
 
         .contact-form button {
-            background-color: #238636;
-            color: white;
             padding: 10px 20px;
+            background-color: #5cb85c; /* Green button */
+            color: white;
             border: none;
+            border-radius: 4px;
             cursor: pointer;
-            border-radius: 5px;
+            font-size: 16px;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+        .contact-form button:hover {
+            background-color: #4cae4c;
         }
 
+        .contact-image {
+            width: 100%;
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 8px;
+        }
+
+        /* Media Queries for Responsiveness */
         @media (max-width: 768px) {
-            .container, .contact-container {
+            .container {
                 flex-direction: column;
             }
+
+            .left {
+                flex: 0 0 auto;
+                width: 100%;
+            }
+
+            nav li {
+                display: block;
+                margin: 10px 0;
+            }
         }
+
     </style>
 </head>
 <body>
     <nav>
         <ul>
-            <li><a href="https://www.linkedin.com/in/macfrancis-belchi-8125a28b" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
-            <li><a href="mailto:macfrancis.belchi@outlook.com"><i class="fas fa-envelope"></i> Email</a></li>
+            <li>
+                <a href="https://www.linkedin.com/in/macfrancis-belchi-8125a28b" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+            </li>
+            <li>
+                <a href="mailto:macfrancis.belchi@outlook.com">
+                    <i class="fas fa-envelope"></i> Email
+                </a>
+            </li>
         </ul>
     </nav>
 
     <div class="container">
         <div class="left">
-            <img src="Me.jpg" alt="Macfrancis Belchi">
+            <img src="Me.jpg" alt="Macfrancis Belchi Profile">
         </div>
+
         <div class="middle">
             <h1>Macfrancis Belchi</h1>
-            <p>Systems Administrator, specializing in managing and maintaining servers in complex environments. Proven ability to deploy and administer virtual machines across Windows and Linux distributions. Expertise includes network security with Cisco and FortiGate.</p>
-            <p>Proficient in Centreon, Zabbix, EFT servers, Veeam, Microsoft Intune, Azure, Microsoft 365 Admin Center, Active Directory, and Azure AD.</p>
+            <p>A highly motivated Systems Administrator specializing in managing and maintaining servers in complex environments. I possess a proven ability to deploy and administer virtual machines across multiple domains, covering both Windows and Linux distributions. My expertise extends to network security, where I manage firewall rules and objects in Cisco and FortiGate environments.</p>
+            <p>Proficient in utilizing various security and monitoring platforms, including Centreon, Zabbix, and EFT servers, to ensure system health and security. Experienced with Veeam for server backups and disaster recovery. Daily tasks include managing Microsoft Intune, Azure, the Microsoft 365 Admin Center, Active Directory, and Azure AD.</p>
         </div>
+
         <div class="right">
             <div class="portfolio-title">
-                <img src="target-icon.png" class="icon">
-                <h2>🎯 Welcome to My Work Portfolio 📌</h2>
+                <img src="target-icon.png" alt="" class="icon">
+                <h2>Welcome to My Work Portfolio</h2>
             </div>
-            <p>Discover engaging project snippets showcasing my expertise in enterprise administration, system development, and IT solutions.</p>
-            <img src="project3.jpg" class="icon">
+            <p>Here you will find a snippet slideshow of my projects, showcasing my expertise in enterprise administration, system development, and internal IT solutions. Each project demonstrates how organizations can leverage my skills for increased efficiency and enhanced workflows.</p>
 
             <div class="slideshow">
                 <button class="prev">❮</button>
                 <div class="slide active">
-                    <h3>🔹 Multi-Platform IT Administration & Security</h3>
-                    <p>Administering Salesforce, Jira, ServiceNow, Microsoft 365, AWS, Fortinet, Cisco, and more.</p>
-                    <img src="p3.jpg">
+                    <h3>Multi-Platform IT Administration & Security</h3>
+                    <p>Proficient in administering and managing diverse IT platforms including Salesforce, Confluence, Jira, Manage Engine, ServiceNow, ESET, Microsoft 365, SentinelOne, Azure, GCP, AWS, NetScaler, Fortinet, Zscaler, and Cisco.</p>
+                    <p>Experienced in cross-platform troubleshooting, security compliance enforcement, endpoint and systems performance optimization.</p>
+                    <img src="p3.jpg" alt="Multi-Platform IT Administration & Security">
                 </div>
                 <div class="slide">
-                    <h3>🔹 VM Provisioning Request System</h3>
-                    <p>Built with Power Apps and Power Automate, integrated with Teams.</p>
-                    <img src="p5.jpg">
+                    <h3>Asset Request Form - Virtual Machine (VM) Request</h3>
+                    <p>Developed a Power Apps-based form for IT asset requests.</p>
+                    <p>Integrated into Microsoft Teams for easy access and rapid handling.</p>
+                    <p>Uses Power Automate to streamline approval workflows.</p>
+                    <p>Enhances efficiency in virtual machine provisioning.</p>
+                    <img src="p5.jpg" alt="Asset Request Form">
                 </div>
                 <div class="slide">
-                    <h3>🔹 Real-Time Asset Management</h3>
-                    <p>Monitoring and managing IT assets effectively.</p>
-                    <img src="p3.jpg">
+                    <h3>Real-Time Asset Inventory Portal</h3>
+                    <p>Collaborated on a centralized asset inventory portal for IT visibility.</p>
+                    <p>Provides real-time tracking of servers, hosts, domains, and configurations.</p>
+                    <p>Enables IT teams to monitor and manage assets effectively.</p>
+                    <p>Supports comprehensive asset insights, Bringing Innovation to IT Solutions.</p>
+                    <img src="p4.jpg" alt="Real-Time Asset Inventory Portal">
                 </div>
                 <div class="slide">
-                    <h3>🔹 Ticketing System</h3>
-                    <p>Integrated IT support with Teams and Dataverse.</p>
-                    <img src="project3.jpg">
+                    <h3>Helpdesk Ticketing System - Microsoft Power Apps</h3>
+                    <p>Designed a user-friendly ticketing system for seamless IT support.</p>
+                    <p>Integrated with Microsoft Teams for direct technician communication.</p>
+                    <p>Uses Microsoft Dataverse for secure data management.</p>
+                    <p>Uses automated alerts for ticket tracking and escalation.</p>
+                    <img src="p6.jpg" alt="Helpdesk Ticketing System">
                 </div>
                 <div class="slide">
-                    <h3>🔹 Thank You for Viewing!</h3>
+                    <h3>Contact Me</h3>
                     <div class="contact-container">
                         <div class="contact-form">
-                            <h2>Contact Me</h2>
+                            <h2>Get in Touch</h2>
                             <form action="https://formspree.io/f/xeoajrnr" method="POST">
                                 <input type="text" name="name" placeholder="Your Name" required>
                                 <input type="email" name="email" placeholder="Your Email" required>
-                                <textarea name="message" placeholder="Message"></textarea>
-                                <button type="submit">Send</button>
+                                <textarea name="message" placeholder="Your Message" required></textarea>
+                                <button type="submit">Send Message</button>
                             </form>
+                            <div class="contact-image" style="background-image: url('me2.jpg');"></div>
                         </div>
-                        <div class="contact-image" style="background-image:url('me2.jpg');"></div>
                     </div>
                 </div>
                 <button class="next">❯</button>
@@ -197,18 +314,48 @@
     </div>
 
     <script>
-        let slides = document.querySelectorAll('.slide');
-        let current = 0;
-        document.querySelector('.next').onclick = () => {
-            slides[current].classList.remove('active');
-            current = (current + 1) % slides.length;
-            slides[current].classList.add('active');
-        };
-        document.querySelector('.prev').onclick = () => {
-            slides[current].classList.remove('active');
-            current = (current - 1 + slides.length) % slides.length;
-            slides[current].classList.add('active');
-        };
+        const slides = document.querySelectorAll('.slide');
+        const prevBtn = document.querySelector('.prev');
+        const nextBtn = document.querySelector('.next');
+        let currentSlide = 0;
+        let autoSlideInterval;
+
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            slides[index].classList.add('active');
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        function startAutoSlide() {
+            autoSlideInterval = setInterval(nextSlide, 5000); // Change slide every 5 seconds
+        }
+
+        function stopAutoSlide() {
+            clearInterval(autoSlideInterval);
+        }
+
+        // Show the first slide initially
+        showSlide(currentSlide);
+
+        // Start auto slide
+        startAutoSlide();
+
+        nextBtn.addEventListener('click', () => {
+            stopAutoSlide();
+            nextSlide();
+            startAutoSlide();
+        });
+
+        prevBtn.addEventListener('click', () => {
+            stopAutoSlide();
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+            startAutoSlide();
+        });
     </script>
 </body>
 </html>
