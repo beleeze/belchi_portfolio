@@ -48,7 +48,7 @@
             margin: 0 auto;
             padding: 2rem;
             display: grid;
-            grid-template-columns: minmax(0, 2fr) minmax(0, 2fr) minmax(0, 2fr); /* Adjusted to make left match right */
+            grid-template-columns: minmax(0, 2fr) minmax(0, 2fr) minmax(0, 2fr);
             gap: 2rem;
             min-height: calc(100vh - 5rem);
         }
@@ -56,7 +56,7 @@
         .left {
             display: flex;
             align-items: center;
-            justify-content: center; /* Center the image */
+            justify-content: center;
         }
 
         .left img {
@@ -84,9 +84,19 @@
             margin-bottom: 1.5rem;
         }
 
+        .middle img {
+            width: 100%;
+            max-width: 600px; /* Match the max-width of slide images for consistency */
+            height: auto;
+            border-radius: 8px;
+            margin-top: 1rem;
+            display: block;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
         .right {
             padding: 2rem;
-            min-width: 0; /* Prevent overflow */
+            min-width: 0;
         }
 
         .portfolio-title {
@@ -225,6 +235,9 @@
             .slide img {
                 max-width: 900px;
             }
+            .middle img {
+                max-width: 700px; /* Slightly larger on large screens */
+            }
         }
 
         @media (max-width: 1024px) {
@@ -240,6 +253,9 @@
             }
             .slide img {
                 max-width: 600px;
+            }
+            .middle img {
+                max-width: 500px;
             }
         }
 
@@ -266,6 +282,11 @@
             .slide img {
                 max-width: 100%;
             }
+            .middle img {
+                max-width: 100%;
+                width: 80%;
+                margin: 0 auto;
+            }
         }
 
         @media (max-width: 480px) {
@@ -278,6 +299,9 @@
             }
             .slide img {
                 max-width: 100%;
+            }
+            .middle img {
+                width: 100%;
             }
         }
     </style>
@@ -297,20 +321,20 @@
             <h1>Macfrancis Belchi</h1>
             <p>Systems Administrator specializing in managing complex server environments. Expert in deploying and administering virtual machines across Windows and Linux domains.</p>
             <p>Skilled in network security (Cisco, FortiGate), monitoring platforms (Centreon, Zabbix), and backup solutions (Veeam). Proficient in Microsoft Intune, Azure, and M365 administration.</p>
+            <img src="project3.jpg" alt="Project 3">
         </div>
 
         <div class="right">
             <div class="portfolio-title">
-                
+                <img src="target-icon.png" alt="Target" class="icon">
                 <h2>Work Portfolio</h2>
             </div>
             <div class="slideshow">
-                <img src="project3.jpg" alt="Target" class="icon">
                 <button class="prev">❮</button>
                 <div class="slide active">
                     <h3>Multi-Platform IT Administration & Security</h3>
-                    <p>🌐 Proficient in Salesforce, Confluence, Jira, Manage Engine, ServiceNow, ESET, M365, SentinelOne, Azure, GCP, AWS, NetScaler, Fortinet, Zscaler, and Cisco.</p>
-                    <p>🛠️ Experienced in cross-platform troubleshooting, security compliance and endpoint performance optimization.</p>
+                    <p>Proficient in Salesforce, Confluence, Jira, Manage Engine, ServiceNow, ESET, M365, SentinelOne, Azure, GCP, AWS, NetScaler, Fortinet, Zscaler, and Cisco.</p>
+                    <p>Expert in cross-platform troubleshooting and security compliance.</p>
                     <img src="p3.jpg" alt="IT Administration">
                 </div>
                 <div class="slide">
@@ -364,7 +388,7 @@
             showSlide(currentSlide);
         });
 
-        nextBtn.addEventListener('click', () => { // Removed extra ()
+        nextBtn.addEventListener('click', () => {
             currentSlide = (currentSlide + 1) % slides.length;
             showSlide(currentSlide);
         });
