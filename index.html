@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
-        /* CSS Reset (Optional, but recommended) */
+        /* CSS Reset */
         *, *::before, *::after {
             box-sizing: border-box;
             margin: 0;
@@ -17,14 +17,14 @@
         }
 
         body {
-            background-color: #121212; /* Darker background */
+            background-color: #121212;
             color: #fff;
-            font-family: 'Roboto', sans-serif; /* More modern font */
+            font-family: 'Roboto', sans-serif;
             line-height: 1.6;
-            transition: background-color 0.3s ease; /* Smooth transition */
+            transition: background-color 0.3s ease;
         }
 
-        /* Dark Mode Toggle (Optional) */
+        /* Dark Mode Toggle */
         .dark-mode-toggle {
             position: fixed;
             top: 20px;
@@ -40,7 +40,7 @@
 
         /* Navigation */
         nav {
-            background-color: #212121; /* Slightly lighter dark background */
+            background-color: #212121;
             padding: 1rem 0;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
             position: sticky;
@@ -68,7 +68,7 @@
         }
 
         nav a:hover {
-            color: #d84b6b; /* Highlight on hover */
+            color: #d84b6b;
         }
 
         nav i {
@@ -82,7 +82,7 @@
             margin: 0 auto;
             padding: 2rem;
             display: grid;
-            grid-template-columns: 1fr 2fr 1fr;
+            grid-template-columns: 1fr 2fr 1fr; /* Define columns */
             gap: 2rem;
         }
 
@@ -94,9 +94,10 @@
         .left img {
             width: 100%;
             max-width: 300px;
-            border-radius: 50%; /* Circular image */
+            /*  Remove border-radius: 50%; */
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
             transition: transform 0.3s ease;
+            border-radius: 10px; /* Add some corner rounding */
         }
 
         .left img:hover {
@@ -111,7 +112,7 @@
         .middle h1 {
             font-size: 2.5rem;
             margin-bottom: 1rem;
-            color: #d84b6b; /* Accent color */
+            color: #d84b6b;
         }
 
         .middle p {
@@ -163,7 +164,7 @@
 
         .slide.active {
             display: block;
-            animation: fadeIn 0.5s ease-in-out; /* Fade-in animation */
+            animation: fadeIn 0.5s ease-in-out;
         }
 
         @keyframes fadeIn {
@@ -193,7 +194,7 @@
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+            background-color: rgba(0, 0, 0, 0.5);
             border: none;
             color: #fff;
             font-size: 2rem;
@@ -264,28 +265,54 @@
             border-radius: 5px;
         }
 
-        /* Responsive Design */
+        /* Responsive Design - MAJOR IMPROVEMENT */
         @media (max-width: 768px) {
             .container {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr; /* Stack columns on smaller screens */
+                padding: 1rem; /* Reduce padding */
             }
 
             .left, .middle, .right {
                 padding: 1rem;
             }
 
+            .left {
+                text-align: center; /* Center the image */
+            }
+
+            .left img {
+                max-width: 200px; /* Reduce image size on small screens */
+            }
+
             nav ul {
+                flex-direction: column; /* Stack navigation items */
+                align-items: flex-end;  /* Align to the right */
                 padding-right: 1rem;
             }
 
             nav li {
-                margin-left: 1rem;
+                margin-left: 0;  /* Remove left margin */
+                margin-top: 0.5rem; /* Add some vertical spacing */
+            }
+
+            .middle h1 {
+                font-size: 2rem; /* Reduce heading size */
+            }
+
+            .right h2 {
+                font-size: 1.75rem; /* Reduce heading size */
             }
         }
+        @media (max-width: 500px) {
+            .left img {
+               max-width: 150px;
+            }
+         }
     </style>
 </head>
 <body>
     <button class="dark-mode-toggle">Toggle Dark Mode</button>
+
     <nav>
         <ul>
             <li>
@@ -410,5 +437,4 @@
     </script>
 </body>
 </html>
-
 
