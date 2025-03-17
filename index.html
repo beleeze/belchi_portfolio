@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -264,7 +265,7 @@
             border-radius: 5px;
         }
 
-        /* Responsive Design - SIGNIFICANT IMPROVEMENT */
+        /* Responsive Design - SCALABLE FONT SIZES */
         @media (max-width: 768px) {
             .container {
                 grid-template-columns: 1fr; /* Stack columns */
@@ -281,7 +282,8 @@
             }
 
             .left img {
-                max-width: 40%; /* Further increase image size on mobile */
+                max-width: 60%; /* Further increase image size on mobile */
+                margin-top:1rem;
             }
 
             nav ul {
@@ -296,43 +298,52 @@
             }
 
             .middle h1 {
-                font-size: 2.2rem; /* Increase heading size */
+                font-size: 3rem; /* Increase heading size */
             }
 
             .middle p {
-                font-size: 1.2rem;  /* Increase paragraph size */
+                font-size: 1.3rem;  /* Increase paragraph size */
             }
 
             .right h2 {
-                font-size: 1.9rem;  /* Increase heading size */
+                font-size: 2.75rem;  /* Increase heading size */
             }
 
              .right p {
-                 font-size: 1.2rem;   /* Increase paragraph size */
+                 font-size: 1.3rem;   /* Increase paragraph size */
               }
 
             .slide h3 {
-                font-size: 1.4rem; /* Increase slide heading size */
+                font-size: 2rem; /* Increase slide heading size */
              }
 
              .slide p {
-                font-size: 1.1rem; /* Increase slide paragraph size */
+                font-size: 1.3rem; /* Increase slide paragraph size */
              }
 
              .contact-form h2 {
-                font-size: 1.8rem; /* Increase contact form heading size */
+                font-size: 2.5rem; /* Increase contact form heading size */
              }
 
              .contact-form input, .contact-form textarea, .contact-form button {
-               font-size: 1.1rem;  /* Increase form element size */
+               font-size: 1.3rem;  /* Increase form element size */
             }
-        }
 
-        @media (max-width: 500px) {
-            .left img {
-                max-width: 60%;  /*Even Larger for smaller screen*/
-            }
+            /* Make everything larger */
+             html {
+                font-size: 1.3vw; /* Make text resizable based on viewport width */
+             }
         }
+        /* Make everything larger on smaller phone screens */
+         @media (max-width: 500px){
+             html {
+                font-size: 1.7vw;
+             }
+
+             .left img {
+                max-width: 70%;  /*Even Larger for smaller screen*/
+             }
+         }
     </style>
 </head>
 <body>
@@ -362,7 +373,7 @@
             <h1>Macfrancis Belchi</h1>
             <p>Systems Administrator, specializing in managing and maintaining servers in complex environments. Possesses a proven ability to deploy and administer numerous virtual machines across multiple domains, covering both Windows and various Linux distributions.</p>
             <p>Expertise extends to network security, where I manage firewall rules and objects in both Cisco and FortiGate environments. Proficient in utilizing various security and monitoring platforms, including Centreon and Zabbix, & EFT servers to ensure system health and security.</p>
-            <p>Experienced with Veeam for server backups and disaster recovery. Daily operational tasks include managing Microsoft Intune, Azure, and the Microsoft 365 Admin Center, Active Directory and Azure AD.</p>
+            <p>Experienced with Veeam for server backups and disaster recovery. Daily operational tasks include managing Microsoft Intune, Azure, and the Microsoft 365 Admin Center, Active Directory, and Azure AD.</p>
         </div>
 
         <div class="right">
@@ -417,12 +428,11 @@
                                 <button type="submit">Send Message</button>
                             </form>
                         </div>
-                        
+                        <div class="contact-image" style="background-image: url('me2.jpg');"></div>
                     </div>
                 </div>
                 <button class="next">❯</button>
             </div>
-            <div class="contact-image" style="background-image: url('me2.jpg');"></div>
         </div>
     </div>
 
@@ -463,4 +473,3 @@
     </script>
 </body>
 </html>
-
