@@ -48,7 +48,7 @@
             margin: 0 auto;
             padding: 2rem;
             display: grid;
-            grid-template-columns: minmax(0, 1fr) minmax(0, 2fr) minmax(0, 2fr); /* Increased right column width */
+            grid-template-columns: minmax(0, 2fr) minmax(0, 2fr) minmax(0, 2fr); /* Adjusted to make left match right */
             gap: 2rem;
             min-height: calc(100vh - 5rem);
         }
@@ -56,11 +56,11 @@
         .left {
             display: flex;
             align-items: center;
+            justify-content: center; /* Center the image */
         }
 
         .left img {
             width: 100%;
-            max-width: 400px;
             height: auto;
             border-radius: 14px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
@@ -109,8 +109,8 @@
             padding: 1.5rem;
             border-radius: 15px;
             backdrop-filter: blur(5px);
-            width: 100%; /* Ensure full width of container */
-            max-width: none; /* Remove any max-width constraint */
+            width: 100%;
+            max-width: none;
         }
 
         .slide {
@@ -135,7 +135,7 @@
 
         .slide img {
             width: 100%;
-            max-width: 800px; /* Increased max-width for wider images */
+            max-width: 800px;
             height: auto;
             border-radius: 8px;
             margin-top: 1rem;
@@ -223,7 +223,7 @@
                 padding: 3rem;
             }
             .slide img {
-                max-width: 900px; /* Even wider on large screens */
+                max-width: 900px;
             }
         }
 
@@ -363,7 +363,7 @@
             showSlide(currentSlide);
         });
 
-        nextBtn.addEventListener('click', () () => {
+        nextBtn.addEventListener('click', () => { // Removed extra ()
             currentSlide = (currentSlide + 1) % slides.length;
             showSlide(currentSlide);
         });
