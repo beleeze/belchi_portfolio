@@ -94,7 +94,6 @@
         .left img {
             width: 100%;
             max-width: 300px;
-            /*  Remove border-radius: 50%; */
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
             transition: transform 0.3s ease;
             border-radius: 10px; /* Add some corner rounding */
@@ -265,11 +264,11 @@
             border-radius: 5px;
         }
 
-        /* Responsive Design - MAJOR IMPROVEMENT */
+        /* Responsive Design - SIGNIFICANT IMPROVEMENT */
         @media (max-width: 768px) {
             .container {
-                grid-template-columns: 1fr; /* Stack columns on smaller screens */
-                padding: 1rem; /* Reduce padding */
+                grid-template-columns: 1fr; /* Stack columns */
+                padding: 1rem;
             }
 
             .left, .middle, .right {
@@ -277,37 +276,63 @@
             }
 
             .left {
-                text-align: center; /* Center the image */
+                text-align: center;
+                margin-bottom: 1rem; /* Add spacing below image */
             }
 
             .left img {
-                max-width: 200px; /* Reduce image size on small screens */
+                max-width: 40%; /* Further increase image size on mobile */
             }
 
             nav ul {
-                flex-direction: column; /* Stack navigation items */
-                align-items: flex-end;  /* Align to the right */
+                flex-direction: column;
+                align-items: flex-end;
                 padding-right: 1rem;
             }
 
             nav li {
-                margin-left: 0;  /* Remove left margin */
-                margin-top: 0.5rem; /* Add some vertical spacing */
+                margin-left: 0;
+                margin-top: 0.5rem;
             }
 
             .middle h1 {
-                font-size: 2rem; /* Reduce heading size */
+                font-size: 2.2rem; /* Increase heading size */
+            }
+
+            .middle p {
+                font-size: 1.2rem;  /* Increase paragraph size */
             }
 
             .right h2 {
-                font-size: 1.75rem; /* Reduce heading size */
+                font-size: 1.9rem;  /* Increase heading size */
+            }
+
+             .right p {
+                 font-size: 1.2rem;   /* Increase paragraph size */
+              }
+
+            .slide h3 {
+                font-size: 1.4rem; /* Increase slide heading size */
+             }
+
+             .slide p {
+                font-size: 1.1rem; /* Increase slide paragraph size */
+             }
+
+             .contact-form h2 {
+                font-size: 1.8rem; /* Increase contact form heading size */
+             }
+
+             .contact-form input, .contact-form textarea, .contact-form button {
+               font-size: 1.1rem;  /* Increase form element size */
             }
         }
+
         @media (max-width: 500px) {
             .left img {
-               max-width: 150px;
+                max-width: 60%;  /*Even Larger for smaller screen*/
             }
-         }
+        }
     </style>
 </head>
 <body>
