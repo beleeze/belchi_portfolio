@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
         body {
             background-color: black;
@@ -92,8 +93,8 @@
             display: block;
         }
 
-        .slide p {
-            margin-bottom: 10px;
+        .slide h3, .slide p {
+            margin: 10px 0;
         }
 
         .slide img {
@@ -110,6 +111,7 @@
             color: white;
             font-size: 2em;
             cursor: pointer;
+            z-index: 10;
         }
 
         .prev {
@@ -120,7 +122,6 @@
             right: 10px;
         }
 
-        /* Styles for the contact slide */
         .slide h2 {
             text-align: center;
             margin-bottom: 20px;
@@ -135,7 +136,7 @@
         }
 
         .contact-form {
-            background-color: #333; /* Dark gray background */
+            background-color: #333;
             color: white;
             padding: 20px;
         }
@@ -148,13 +149,13 @@
             width: 100%;
             padding: 10px;
             margin: 10px 0;
-            background-color: #ccc; /* Light gray background */
+            background-color: #ccc;
             border: none;
             color: black;
         }
 
         .contact-form button {
-            background-color: #d84b6b; /* Pinkish-red */
+            background-color: #d84b6b;
             color: white;
             padding: 10px 20px;
             border: none;
@@ -165,9 +166,13 @@
             background-color: white;
             background-size: cover;
             background-position: center;
+            min-height: 300px;
         }
 
-        /* Responsive adjustments */
+        .w3-hover-opacity:hover {
+            opacity: 0.7;
+        }
+
         @media (max-width: 768px) {
             .container {
                 flex-direction: column;
@@ -189,19 +194,19 @@
 </head>
 <body>
     <nav>
-  <ul>
-    <li>
-      <a href="https://www.linkedin.com/in/macfrancis-belchi-8125a28b" target="_blank" rel="noopener noreferrer">
-        <i class="fab fa-linkedin w3-hover-opacity"></i> LinkedIn
-      </a>
-    </li>
-    <li>
-      <a href="mailto:macfrancis.belchi@outlook.com">
-        <i class="fas fa-envelope w3-hover-opacity"></i> Email
-      </a>
-    </li>
-  </ul>
-</nav>
+        <ul>
+            <li>
+                <a href="https://www.linkedin.com/in/macfrancis-belchi-8125a28b" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-linkedin w3-hover-opacity"></i> LinkedIn
+                </a>
+            </li>
+            <li>
+                <a href="mailto:macfrancis.belchi@outlook.com">
+                    <i class="fas fa-envelope w3-hover-opacity"></i> Email
+                </a>
+            </li>
+        </ul>
+    </nav>
 
     <div class="container">
         <div class="left">
@@ -210,31 +215,24 @@
 
         <div class="middle">
             <h1>Macfrancis Belchi</h1>
-            <p><h4>Systems Administrator, specializing in managing and maintaining servers in complex environments. Possesses a proven ability to deploy and administer numerous virtual machines across multiple domains, 
-                covering both Windows and various Linux distributions. Expertise extends to network security, where I manage firewall rules and objects in both Cisco and FortiGate environments.</p></h4>
-            <p><h4>Proficient in utilizing various security and monitoring platforms, including Centreon and Zabbix, & EFT servers to ensure system health and security. Experienced with Veeam for server backups and 
-                disaster recovery. Daily operational tasks include managing Microsoft Intune, Azure, and the Microsoft 365 Admin Center, Active Directory and Azure AD.</p></h4>
+            <p>Systems Administrator, specializing in managing and maintaining servers in complex environments. Possesses a proven ability to deploy and administer numerous virtual machines across multiple domains, covering both Windows and various Linux distributions. Expertise extends to network security, where I manage firewall rules and objects in both Cisco and FortiGate environments.</p>
+            <p>Proficient in utilizing various security and monitoring platforms, including Centreon and Zabbix, & EFT servers to ensure system health and security. Experienced with Veeam for server backups and disaster recovery. Daily operational tasks include managing Microsoft Intune, Azure, and the Microsoft 365 Admin Center, Active Directory and Azure AD.</p>
         </div>
 
         <div class="right">
             <div class="portfolio-title">
-                <img src="target-icon.png" alt="" class="icon">
-                <h2> 🎯 Welcome to My Work Portfolio 📌 </h2>
+                <img src="target-icon.png" alt="Target Icon" class="icon">
+                <h2>🎯 Welcome to My Work Portfolio 📌</h2>
             </div>
-            <p><h4>Here you will find a visually engaging snippet slideshow of my projects, at the heart of my expertise in enterprise administration, system development, and internal IT solutions. 
-                Each project showcases how organizations can leverage the value I bring for efficiency and enhanced workflows.</p></h4>
+            <p>Here you will find a visually engaging snippet slideshow of my projects, at the heart of my expertise in enterprise administration, system development, and internal IT solutions. Each project showcases how organizations can leverage the value I bring for efficiency and enhanced workflows.</p>
             <img src="project3.jpg" alt="🖥️" class="icon">
             <div class="slideshow">
                 <button class="prev">❮</button>
                 <div class="slide">
-                    <h3> 🔹 Multi-Platform IT Administration & Security </h3>
-                    <p>🔧Proficient in administering and managing diverse IT platforms including Salesforce, Confluence, Jira, Manage Engine, ServiceNow, 
-                          ESET, Microsoft 365, SentinelOne, Azure, GCP, AWS, NetScaler, Fortinet, Zscaler, and Cisco.</p>
+                    <h3>🔹 Multi-Platform IT Administration & Security</h3>
+                    <p>🔧Proficient in administering and managing diverse IT platforms including Salesforce, Confluence, Jira, Manage Engine, ServiceNow, ESET, Microsoft 365, SentinelOne, Azure, GCP, AWS, NetScaler, Fortinet, Zscaler, and Cisco.</p>
                     <p>🛠️ Experienced in cross-platform troubleshooting, security compliance enforcement, endpoint and systems performance optimization.</p>
-                    <p></p>
-                    <b></b>
-                    <p></p>
-                    <img src="p3.jpg" alt="">
+                    <img src="p3.jpg" alt="Project 1">
                 </div>
                 <div class="slide">
                     <h3>🔹 Asset Request Form - Virtual Machine (VM) Request</h3>
@@ -242,20 +240,14 @@
                     <p>🚀 Integrated into Microsoft Teams for easy access and rapid handling.</p>
                     <p>🔄 Uses Power Automate to streamline approval workflows.</p>
                     <p>✅ Enhances efficiency in virtual machine provisioning.</p>
-                    <p></p>
-                    <b></b>
-                    <p></p>
                     <img src="p5.jpg" alt="Project 2">
                 </div>
                 <div class="slide">
                     <h3>🔹 Real-Time Asset Inventory Portal</h3>
-                    <p>🌐 Collaborated on a centralized asset inventory portal for IT visibility.</p> 
+                    <p>🌐 Collaborated on a centralized asset inventory portal for IT visibility.</p>
                     <p>📊 Provides real-time tracking of servers, hosts, domains, and configurations.</p>
                     <p>🛠️ Enables IT teams to monitor and manage assets effectively.</p>
                     <p>📈 Supports comprehensive asset insights, ✨ Bringing Innovation to IT Solutions.</p>
-                    <p></p>
-                    <b></b>
-                    <p></p>
                     <img src="p4.jpg" alt="Project 3">
                 </div>
                 <div class="slide">
@@ -264,10 +256,7 @@
                     <p>🔗 Integrated with Microsoft Teams for direct technician communication.</p>
                     <p>📊 Uses Microsoft Dataverse for secure data management.</p>
                     <p>⚙️ Uses automated alerts for ticket tracking and escalation.</p>
-                    <p></p>
-                    <b></b>
-                    <p></p>
-                    <img src="p6.jpg" alt="Project 3">
+                    <img src="p6.jpg" alt="Project 4">
                 </div>
                 <div class="slide">
                     <h3>🔹 Thank You for Viewing 🔹</h3>
@@ -280,13 +269,10 @@
                                 <textarea name="message" placeholder="Your Message" required></textarea>
                                 <button type="submit">Send Message</button>
                             </form>
+                        </div>
                         <div class="contact-image" style="background-image: url('me2.jpg');"></div>
-                       </div>     
                     </div>
                 </div>
-                <p></p>
-                <b></b>
-                <p></p>
                 <button class="next">❯</button>
             </div>
         </div>
@@ -303,7 +289,6 @@
             slides[index].classList.add('active');
         }
 
-        // Show the first slide initially
         showSlide(currentSlide);
 
         nextBtn.addEventListener('click', () => {
