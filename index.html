@@ -1,3 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            text-align: right;
+            padding: 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+        }
+
+        .left, .middle, .right {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .left img {
+            width: 100%;
+            height: auto;
+        }
+
+        .middle h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .middle p {
+            font-size: 1em;
+            line-height: 1.5;
+        }
+
+        .right {
+            text-align: center;
+        }
+
+        .portfolio-title {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .portfolio-title .icon {
+            width: 30px;
+            margin-right: 10px;
+        }
+
+        .right h2 {
+            font-size: 1.8em;
+        }
+
+        .right p {
+            font-size: 1em;
+            margin: 10px 0;
+        }
+
+        .right .icon {
+            width: 30px;
+            margin: 10px auto;
+            display: block;
+        }
+
+        .slideshow {
+            position: relative;
+        }
+
+        .slide {
+            display: none;
+        }
+
+        .slide.active {
+            display: block;
+        }
+
+        .slide p {
+            margin-bottom: 10px;
+        }
+
+        .slide img {
+            width: 100%;
+            height: auto;
+        }
+
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: white;
+            font-size: 2em;
+            cursor: pointer;
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+
+        /* Styles for the contact slide */
+        .slide h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .contact-container {
+            display: flex;
+        }
+
+        .contact-form, .contact-image {
+            flex: 1;
+        }
+
+        .contact-form {
+            background-color: #333; /* Dark gray background */
+            color: white;
+            padding: 20px;
+        }
+
+        .contact-form h2 {
+            text-align: center;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            background-color: #ccc; /* Light gray background */
+            border: none;
+            color: black;
+        }
+
+        .contact-form button {
+            background-color: #d84b6b; /* Pinkish-red */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .contact-image {
+            background-color: white;
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .left, .middle, .right {
+                width: 100%;
+            }
+
+            .contact-container {
+                flex-direction: column;
+            }
+
+            .contact-form, .contact-image {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
 <body>
     <nav>
   <ul>
