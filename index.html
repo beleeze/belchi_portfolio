@@ -1,174 +1,131 @@
 <body>
-    <nav aria-label="Main navigation">
-        <ul class="nav-list">
-            <li>
-                <a href="https://www.linkedin.com/in/macfrancis-belchi-8125a28b" 
-                   target="_blank" 
-                   rel="noopener noreferrer"
-                   aria-label="LinkedIn profile">
-                    <i class="fab fa-linkedin icon-hover"></i> 
-                    <span class="nav-label">LinkedIn</span>
-                </a>
-            </li>
-            <li>
-                <a href="mailto:macfrancis.belchi@outlook.com" aria-label="Send email">
-                    <i class="fas fa-envelope icon-hover"></i> 
-                    <span class="nav-label">Email</span>
-                </a>
-            </li>
-        </ul>
-    </nav>
+    <nav>
+  <ul>
+    <li>
+      <a href="https://www.linkedin.com/in/macfrancis-belchi-8125a28b" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-linkedin w3-hover-opacity"></i> LinkedIn
+      </a>
+    </li>
+    <li>
+      <a href="mailto:macfrancis.belchi@outlook.com">
+        <i class="fas fa-envelope w3-hover-opacity"></i> Email
+      </a>
+    </li>
+  </ul>
+</nav>
 
-    <main class="container">
-        <section class="profile-section">
-            <div class="profile-image">
-                <img src="Me.jpg" alt="Macfrancis Belchi professional portrait">
+    <div class="container">
+        <div class="left">
+            <img src="Me.jpg" alt="Profile Image">
+        </div>
+
+        <div class="middle">
+            <h1>Macfrancis Belchi</h1>
+            <p><h4>Systems Administrator, specializing in managing and maintaining servers in complex environments. Possesses a proven ability to deploy and administer numerous virtual machines across multiple domains, 
+                covering both Windows and various Linux distributions. Expertise extends to network security, where I manage firewall rules and objects in both Cisco and FortiGate environments.</p></h4>
+            <p><h4>Proficient in utilizing various security and monitoring platforms, including Centreon and Zabbix, & EFT servers to ensure system health and security. Experienced with Veeam for server backups and 
+                disaster recovery. Daily operational tasks include managing Microsoft Intune, Azure, and the Microsoft 365 Admin Center, Active Directory and Azure AD.</p></h4>
+        </div>
+
+        <div class="right">
+            <div class="portfolio-title">
+                <img src="target-icon.png" alt="" class="icon">
+                <h2> 🎯 Welcome to My Work Portfolio 📌 </h2>
             </div>
-
-            <div class="profile-content">
-                <h1>Macfrancis Belchi</h1>
-                <div class="professional-summary">
-                    <p class="highlight">Systems Administrator</p>
-                    <p>Specializing in managing and maintaining servers in complex environments. Expertise includes:</p>
-                    <ul class="expertise-list">
-                        <li>Deployment and administration of virtual machines across multiple domains</li>
-                        <li>Cross-platform management (Windows/Linux)</li>
-                        <li>Network security configuration (Cisco/FortiGate)</li>
-                        <li>Cloud infrastructure management (Azure, AWS, GCP)</li>
-                    </ul>
+            <p><h4>Here you will find a visually engaging snippet slideshow of my projects, at the heart of my expertise in enterprise administration, system development, and internal IT solutions. 
+                Each project showcases how organizations can leverage the value I bring for efficiency and enhanced workflows.</p></h4>
+            <img src="project3.jpg" alt="🖥️" class="icon">
+            <div class="slideshow">
+                <button class="prev">❮</button>
+                <div class="slide">
+                    <h3> 🔹 Multi-Platform IT Administration & Security </h3>
+                    <p>🔧Proficient in administering and managing diverse IT platforms including Salesforce, Confluence, Jira, Manage Engine, ServiceNow, 
+                          ESET, Microsoft 365, SentinelOne, Azure, GCP, AWS, NetScaler, Fortinet, Zscaler, and Cisco.</p>
+                    <p>🛠️ Experienced in cross-platform troubleshooting, security compliance enforcement, endpoint and systems performance optimization.</p>
+                    <p></p>
+                    <b></b>
+                    <p></p>
+                    <img src="p3.jpg" alt="">
                 </div>
-            </div>
-        </section>
-
-        <section class="portfolio-section" aria-label="Work portfolio">
-            <div class="portfolio-header">
-                <img src="target-icon.png" alt="" aria-hidden="true">
-                <h2>Welcome to My Work Portfolio</h2>
-                <p class="portfolio-intro">Explore a curated collection of my professional projects demonstrating expertise in enterprise administration and IT solutions.</p>
-            </div>
-
-            <div class="slideshow-container">
-                <div class="slideshow-controls">
-                    <button class="slide-nav prev" aria-label="Previous slide">❮</button>
-                    <div class="slide-indicators"></div>
-                    <button class="slide-nav next" aria-label="Next slide">❯</button>
+                <div class="slide">
+                    <h3>🔹 Asset Request Form - Virtual Machine (VM) Request</h3>
+                    <p>📄 Developed a Power Apps-based form for IT asset requests.</p>
+                    <p>🚀 Integrated into Microsoft Teams for easy access and rapid handling.</p>
+                    <p>🔄 Uses Power Automate to streamline approval workflows.</p>
+                    <p>✅ Enhances efficiency in virtual machine provisioning.</p>
+                    <p></p>
+                    <b></b>
+                    <p></p>
+                    <img src="p5.jpg" alt="Project 2">
                 </div>
-
-                <div class="slides">
-                    <!-- Slide 1 -->
-                    <article class="slide active" aria-label="Project 1: Multi-Platform IT Administration">
-                        <div class="slide-content">
-                            <h3>Multi-Platform IT Administration & Security</h3>
-                            <ul class="project-details">
-                                <li>Proficient in diverse platforms including Salesforce, Azure, AWS, and Cisco</li>
-                                <li>Security compliance and performance optimization</li>
-                                <li>Cross-platform troubleshooting and management</li>
-                            </ul>
-                            <img src="p3.jpg" alt="Screenshot of multi-platform administration dashboard">
-                        </div>
-                    </article>
-
-                    <!-- Other slides follow similar structure -->
-
-                    <!-- Contact Slide -->
-                    <article class="slide" aria-label="Contact information">
-                        <div class="contact-container">
-                            <h2>Get in Touch</h2>
-                            <form class="contact-form" 
-                                  action="https://formspree.io/f/xeoajrnr" 
-                                  method="POST"
-                                  aria-label="Contact form">
-                                <div class="form-group">
-                                    <label for="name">Name:</label>
-                                    <input type="text" id="name" name="name" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="email">Email:</label>
-                                    <input type="email" id="email" name="email" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="message">Message:</label>
-                                    <textarea id="message" name="message" required></textarea>
-                                </div>
-                                <button type="submit" class="submit-btn">Send Message</button>
+                <div class="slide">
+                    <h3>🔹 Real-Time Asset Inventory Portal</h3>
+                    <p>🌐 Collaborated on a centralized asset inventory portal for IT visibility.</p> 
+                    <p>📊 Provides real-time tracking of servers, hosts, domains, and configurations.</p>
+                    <p>🛠️ Enables IT teams to monitor and manage assets effectively.</p>
+                    <p>📈 Supports comprehensive asset insights, ✨ Bringing Innovation to IT Solutions.</p>
+                    <p></p>
+                    <b></b>
+                    <p></p>
+                    <img src="p4.jpg" alt="Project 3">
+                </div>
+                <div class="slide">
+                    <h3>🔹 Helpdesk Ticketing System - Microsoft Power Apps</h3>
+                    <p>🖥️ Designed a user-friendly ticketing system for seamless IT support.</p>
+                    <p>🔗 Integrated with Microsoft Teams for direct technician communication.</p>
+                    <p>📊 Uses Microsoft Dataverse for secure data management.</p>
+                    <p>⚙️ Uses automated alerts for ticket tracking and escalation.</p>
+                    <p></p>
+                    <b></b>
+                    <p></p>
+                    <img src="p6.jpg" alt="Project 3">
+                </div>
+                <div class="slide">
+                    <h3>🔹 Thank You for Viewing 🔹</h3>
+                    <div class="contact-container">
+                        <div class="contact-form">
+                            <h2>Contact Me</h2>
+                            <form action="https://formspree.io/f/xeoajrnr" method="POST">
+                                <input type="text" name="name" placeholder="Your Name" required>
+                                <input type="email" name="email" placeholder="Your Email" required>
+                                <textarea name="message" placeholder="Your Message" required></textarea>
+                                <button type="submit">Send Message</button>
                             </form>
-                        </div>
-                    </article>
+                        <div class="contact-image" style="background-image: url('me2.jpg');"></div>
+                       </div>     
+                    </div>
                 </div>
+                <p></p>
+                <b></b>
+                <p></p>
+                <button class="next">❯</button>
             </div>
-        </section>
-    </main>
-
-    <style>
-        /* Add responsive CSS grid layout, proper spacing, and transitions */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-
-        .profile-section {
-            display: grid;
-            grid-template-columns: 1fr 3fr;
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
-
-        .profile-image img {
-            width: 100%;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-
-        .slideshow-container {
-            position: relative;
-            overflow: hidden;
-            border-radius: 12px;
-            background: #f8f9fa;
-            padding: 2rem;
-        }
-
-        /* Add responsive design and animations */
-        @media (max-width: 768px) {
-            .profile-section {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+        </div>
+    </div>
 
     <script>
-        // Enhanced slideshow with touch support and keyboard navigation
-        const slideshow = {
-            init() {
-                this.slides = Array.from(document.querySelectorAll('.slide'));
-                this.currentIndex = 0;
-                this.addEventListeners();
-                this.createIndicators();
-                this.showSlide(this.currentIndex);
-            },
-            addEventListeners() {
-                document.querySelector('.next').addEventListener('click', () => this.next());
-                document.querySelector('.prev').addEventListener('click', () => this.prev());
-                document.addEventListener('keydown', (e) => {
-                    if (e.key === 'ArrowRight') this.next();
-                    if (e.key === 'ArrowLeft') this.prev();
-                });
-                // Add touch events here
-            },
-            createIndicators() {
-                const container = document.querySelector('.slide-indicators');
-                this.slides.forEach((_, i) => {
-                    const indicator = document.createElement('button');
-                    indicator.className = 'indicator';
-                    indicator.addEventListener('click', () => this.showSlide(i));
-                    container.appendChild(indicator);
-                });
-            },
-            next() { /* ... */ },
-            prev() { /* ... */ },
-            showSlide(index) { /* ... */ }
-        };
+        const slides = document.querySelectorAll('.slide');
+        const prevBtn = document.querySelector('.prev');
+        const nextBtn = document.querySelector('.next');
+        let currentSlide = 0;
 
-        document.addEventListener('DOMContentLoaded', () => slideshow.init());
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            slides[index].classList.add('active');
+        }
+
+        // Show the first slide initially
+        showSlide(currentSlide);
+
+        nextBtn.addEventListener('click', () => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        });
+
+        prevBtn.addEventListener('click', () => {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+        });
     </script>
 </body>
+</html>
