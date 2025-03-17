@@ -15,7 +15,7 @@
         body {
             background: #0a0a0a;
             color: #ffffff;
-            font-family: 'Inter', sans-serif;
+            font-family: 'Inter', Arial, sans-serif;
             line-height: 1.6;
             overflow-x: hidden;
             min-height: 100vh;
@@ -66,10 +66,12 @@
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
             object-fit: cover;
             display: block;
+            animation: slideInFromLeft 1s ease-out forwards; /* Added slide-in animation */
         }
 
         .middle {
             padding: 0.5rem;
+            overflow-y: auto;
         }
 
         .middle h1 {
@@ -86,7 +88,7 @@
 
         .middle img {
             width: 100%;
-            max-width: 600px; /* Match the max-width of slide images for consistency */
+            max-width: 600px;
             height: auto;
             border-radius: 8px;
             margin-top: 1rem;
@@ -106,6 +108,12 @@
             margin-bottom: 2rem;
         }
 
+        .portfolio-title .icon {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+        }
+
         .portfolio-title h2 {
             font-size: clamp(1.5rem, 3vw, 1.8rem);
             background: linear-gradient(45deg, #4CAF50, #81C784);
@@ -120,7 +128,6 @@
             border-radius: 15px;
             backdrop-filter: blur(5px);
             width: 100%;
-            max-width: none;
         }
 
         .slide {
@@ -189,6 +196,13 @@
             font-size: clamp(1.2rem, 2vw, 1.5rem);
         }
 
+        .contact-form label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+            color: #4CAF50;
+        }
+
         .contact-form input,
         .contact-form textarea {
             width: 100%;
@@ -198,7 +212,7 @@
             border: 1px solid #444;
             border-radius: 6px;
             color: white;
-            font-family: 'Inter', sans-serif;
+            font-family: 'Inter', Arial, sans-serif;
             font-size: 1rem;
         }
 
@@ -218,9 +232,27 @@
         }
 
         .contact-image {
-            background: url('me2.jpg') center/cover no-repeat;
             border-radius: 12px;
             min-height: 200px;
+            overflow: hidden;
+        }
+
+        .contact-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        @keyframes slideInFromLeft {
+            0% {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
         }
 
         @keyframes fadeIn {
@@ -236,7 +268,7 @@
                 max-width: 900px;
             }
             .middle img {
-                max-width: 700px; /* Slightly larger on large screens */
+                max-width: 700px;
             }
         }
 
@@ -326,56 +358,62 @@
 
         <div class="right">
             <div class="portfolio-title">
-                <h2>🎯 Work Portfolio 📌</h2>
+                <img src="target-icon.png" alt="Target" class="icon">
+                <h2>Work Portfolio</h2>
             </div>
             <div class="slideshow">
-                <button class="prev">❮</button>
+                <button class="prev" aria-label="Previous Slide">❮</button>
                 <div class="slide active">
-                    <h3>Multi-Platform IT Administration & Security</h3>
-                    <p>🌐Proficient in Salesforce, Confluence, Jira, Manage Engine, ServiceNow, ESET, M365, SentinelOne, Azure, GCP, AWS, NetScaler, Fortinet, Zscaler, and Cisco.</p>
-                    <p>🛠️Experienced in cross-platform troubleshooting and security compliance.</p>
-                    <img src="p3.jpg" alt="IT Administration">
+                    <h3>🔹 Multi-Platform IT Administration & Security</h3>
+                    <p>🌐 Proficient in Salesforce, Confluence, Jira, Manage Engine, ServiceNow, ESET, M365, SentinelOne, Azure, GCP, AWS, NetScaler, Fortinet, Zscaler, and Cisco.</p>
+                    <p>🛠️ Experienced in cross-platform troubleshooting and security compliance.</p>
+                    <img src="p3.jpg" alt="IT Administration and Security Platforms" loading="lazy">
                 </div>
                 <div class="slide">
-                    <h3>Asset Request Form</h3>
+                    <h3>🔹 Asset Request Form</h3>
                     <p>📄 Developed a Power Apps-based form for IT asset requests.</p>
                     <p>🚀 Integrated into Microsoft Teams for easy access and rapid handling.</p>
                     <p>🔄 Uses Power Automate to streamline approval workflows.</p>
                     <p>✅ Enhances efficiency in virtual machine provisioning.</p>
-                    <img src="p5.jpg" alt="Asset Request">
+                    <img src="p5.jpg" alt="Asset Request Form in Power Apps" loading="lazy">
                 </div>
                 <div class="slide">
-                    <h3>Real-Time Asset Inventory Portal</h3>
+                    <h3>🔹 Real-Time Asset Inventory Portal</h3>
                     <p>🌐 Collaborated on a centralized asset inventory portal for IT visibility.</p>
                     <p>📊 Provides real-time tracking of servers, hosts, domains, and configurations.</p>
                     <p>🛠️ Enables IT teams to monitor and manage assets effectively.</p>
                     <p>📈 Supports comprehensive asset insights, ✨ Bringing Innovation to IT Solutions.</p>
-                    <img src="p4.jpg" alt="Inventory Portal">
+                    <img src="p4.jpg" alt="Real-Time Asset Inventory Portal" loading="lazy">
                 </div>
                 <div class="slide">
-                    <h3>Helpdesk Ticketing System</h3>
+                    <h3>🔹 Helpdesk Ticketing System</h3>
                     <p>🖥️ Designed a user-friendly ticketing system for seamless IT support.</p>
                     <p>🔗 Integrated with Microsoft Teams for direct technician communication.</p>
                     <p>📊 Uses Microsoft Dataverse for secure data management.</p>
                     <p>⚙️ Uses automated alerts for ticket tracking and escalation.</p>
-                    <img src="p6.jpg" alt="Ticketing System">
+                    <img src="p6.jpg" alt="Helpdesk Ticketing System in Microsoft Power Apps" loading="lazy">
                 </div>
                 <div class="slide">
-                    <h3>Contact Me</h3>
+                    <h3>🔹 Contact Me</h3>
                     <div class="contact-container">
                         <div class="contact-form">
                             <h2>Get in Touch</h2>
                             <form action="https://formspree.io/f/xeoajrnr" method="POST">
-                                <input type="text" name="name" placeholder="Your Name" required>
-                                <input type="email" name="email" placeholder="Your Email" required>
-                                <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
+                                <label for="name">Your Name</label>
+                                <input type="text" id="name" name="name" placeholder="Your Name" required>
+                                <label for="email">Your Email</label>
+                                <input type="email" id="email" name="email" placeholder="Your Email" required>
+                                <label for="message">Your Message</label>
+                                <textarea id="message" name="message" placeholder="Your Message" rows="4" required></textarea>
                                 <button type="submit">Send Message</button>
                             </form>
                         </div>
-                        <div class="contact-image"></div>
+                        <div class="contact-image">
+                            <img src="me2.jpg" alt="Macfrancis Belchi Contact Image" loading="lazy">
+                        </div>
                     </div>
                 </div>
-                <button class="next">❯</button>
+                <button class="next" aria-label="Next Slide">❯</button>
             </div>
         </div>
     </div>
