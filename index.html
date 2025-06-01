@@ -4,7 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Macfrancis Belchi | Portfolio</title>
+    <meta name="description" content="Systems Administrator Portfolio - Macfrancis Belchi">
+    <meta name="author" content="Macfrancis Belchi">
+    
+    <meta property="og:title" content="Macfrancis Belchi | Portfolio">
+    <meta property="og:description" content="Systems Administrator Portfolio - Macfrancis Belchi">
+    <meta property="og:type" content="website">
+    
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    
     <style>
         * {
             margin: 0;
@@ -13,131 +21,145 @@
         }
 
         body {
-            background: #0a0a0a; /* White background */
+            background: #000000;
             color: #ffffff;
-            font-family: 'Inter', Arial, sans-serif;
+            font-family: 'Inter', sans-serif;
             line-height: 1.6;
-            overflow-x: hidden;
             min-height: 100vh;
         }
 
+        /* Navigation */
         nav {
-            padding: 1.5rem 2rem;
-            display: flex;
-            justify-content: flex-end;
-            gap: 2rem;
-            background: rgba(0, 0, 0, 0.8);
             position: sticky;
             top: 0;
-            z-index: 100;
+            z-index: 50;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(8px);
+            padding: 1.5rem;
+            display: flex;
+            justify-content: flex-end;
+            gap: 1.5rem;
         }
 
         nav a {
             color: #ffffff;
             text-decoration: none;
             font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
             transition: color 0.3s ease;
         }
 
         nav a:hover {
-            color: #4CAF50;
+            color: #4ade80;
         }
 
-        .container {
-            max-width: 1800px; /* Increased from 1600px for more width */
+        /* Main Container */
+        .main-container {
+            max-width: 1800px;
             margin: 0 auto;
-            padding: 2rem;
+            padding: 1rem;
             display: grid;
-            grid-template-columns: minmax(0, 2fr) minmax(0, 2fr) minmax(0, 2fr);
-            gap: 1rem; /* Reduced from 2rem to make containers closer */
+            grid-template-columns: minmax(0, 3fr) minmax(0, 4fr) minmax(0, 5fr);
+            gap: 1rem;
             min-height: calc(100vh - 5rem);
         }
 
-        .left {
+        /* Profile Section */
+        .profile-section {
+            background: #ffffff;
+            border-radius: 0.75rem;
+            padding: 2rem;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 2rem; /* Increased padding for a bolder look */
-            background: #ffffff;
-            border-radius: 10px; /* Added border-radius for a polished look */
         }
 
-        .left img {
+        .profile-image {
             width: 100%;
+            max-width: 400px;
             height: auto;
-            border-radius: 14px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            border-radius: 1rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
             object-fit: cover;
-            display: block;
-            animation: slideInFromLeft 1s ease-out forwards;
+            animation: fadeIn 1s ease-out forwards;
         }
 
-        .middle {
-            padding: 2rem; /* Increased padding for a bolder look */
-            overflow-y: auto;
-            background: #ffffff;
-            border-radius: 10px; /* Added border-radius for a polished look */
+        /* Bio Section */
+        .bio-section {
+            background: #1f2937;
+            border-radius: 0.75rem;
+            padding: 2rem;
         }
 
-        .middle h1 {
-            font-size: clamp(2rem, 4vw, 2.5rem);
-            margin-bottom: 1rem;
-            background: linear-gradient(45deg, #4CAF50, #ffffff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent; /* Fixed missing property for gradient text */
-        }
-
-        .middle p {
-            font-size: clamp(1rem, 2vw, 1.1rem);
-            opacity: 0.9;
+        .bio-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
             margin-bottom: 1.5rem;
-            color: #ffffff;
+            background: linear-gradient(to right, #4ade80, #ffffff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
-        .middle img {
+        .bio-text {
+            font-size: clamp(1rem, 2vw, 1.125rem);
+            color: #d1d5db;
+            margin-bottom: 1.5rem;
+            line-height: 1.75;
+        }
+
+        .bio-image {
             width: 100%;
             max-width: 600px;
             height: auto;
-            border-radius: 8px;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1);
             margin-top: 1rem;
-            display: block;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
         }
 
-        .right {
-            padding: 2rem; /* Increased padding for a bolder look */
-            min-width: 0;
-            background: #0a0a0a;
-            border-radius: 10px; /* Added border-radius for a polished look */
+        /* Portfolio Section */
+        .portfolio-section {
+            background: #000000;
+            border-radius: 0.75rem;
+            padding: 2rem;
         }
 
-        .portfolio-title {
+        .portfolio-header {
             display: flex;
             align-items: center;
             gap: 1rem;
             margin-bottom: 2rem;
         }
 
-        .portfolio-title .icon {
-            width: 30px;
-            height: 30px;
-            margin-right: 10px;
-        }
-
-        .portfolio-title h2 {
-            font-size: clamp(1.5rem, 3vw, 1.8rem);
-            background: linear-gradient(45deg, #4CAF50, #81C784);
+        .portfolio-title {
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            font-weight: 700;
+            background: linear-gradient(to right, #4ade80, #22c55e);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
-        .slideshow {
+        /* Card Styles */
+        .portfolio-card {
             position: relative;
-            background: rgba(255, 255, 255, 0.05);
-            padding: 1.5rem;
-            border-radius: 15px;
-            backdrop-filter: blur(5px);
-            width: 100%;
+            background: rgba(31, 41, 55, 0.5);
+            border: 1px solid #374151;
+            border-radius: 0.75rem;
+            backdrop-filter: blur(8px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-content {
+            padding: 1rem;
+        }
+
+        /* Slideshow */
+        .slideshow-container {
+            position: relative;
+            margin: 0 2rem;
         }
 
         .slide {
@@ -149,333 +171,525 @@
             display: block;
         }
 
-        .slide h3 {
-            margin-bottom: 1rem;
-            font-size: clamp(1.2rem, 2.5vw, 1.4rem);
-            color: #ffffff; /* Fixed duplicate color declaration */
-        }
-
-        .slide p {
-            margin-bottom: 0.8rem;
-            font-size: clamp(0.9rem, 1.5vw, 1rem);
+        .slide-title {
+            font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+            font-weight: 600;
             color: #ffffff;
+            margin-bottom: 1rem;
         }
 
-        .slide img {
+        .slide-text {
+            color: #d1d5db;
+            margin-bottom: 1rem;
+            line-height: 1.75;
+        }
+
+        .slide-details {
+            color: #9ca3af;
+            margin-bottom: 1.5rem;
+            line-height: 1.75;
+        }
+
+        .slide-image {
             width: 100%;
-            max-width: 800px;
-            height: auto;
-            border-radius: 8px;
-            margin-top: 1rem;
+            max-height: 320px;
+            object-fit: cover;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: all 0.3s ease;
         }
 
-        .prev, .next {
+        .slide-image:hover {
+            transform: scale(1.02);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Navigation Buttons */
+        .nav-btn {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
+            z-index: 10;
             background: rgba(0, 0, 0, 0.5);
             border: none;
             color: white;
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 0.25rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             font-size: 1.5rem;
-            padding: 0.5rem 1rem;
-            cursor: pointer;
-            transition: background 0.3s ease;
         }
 
-        .prev:hover, .next:hover {
-            background: #4CAF50;
+        .nav-btn:hover {
+            background: #22c55e;
         }
 
-        .prev { left: 0; }
-        .next { right: 0; }
-
-        .contact-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
+        .prev-btn {
+            left: 0;
         }
 
-        .contact-form {
-            background: #1a1a1a;
-            padding: 2rem;
-            border-radius: 12px;
+        .next-btn {
+            right: 0;
         }
 
-        .contact-form h2 {
-            color: #4CAF50;
-            margin-bottom: 1.5rem;
-            font-size: clamp(1.2rem, 2vw, 1.5rem);
+        /* Slide Indicators */
+        .slide-indicators {
+            display: flex;
+            justify-content: center;
+            margin-top: 1.5rem;
+            gap: 0.5rem;
         }
 
-        .contact-form label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-size: 1rem;
-            color: #4CAF50;
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: 0.8rem;
-            margin-bottom: 1rem;
-            background: #333;
-            border: 1px solid #444;
-            border-radius: 6px;
-            color: white;
-            font-family: 'Inter', Arial, sans-serif;
-            font-size: 1rem;
-        }
-
-        .contact-form button {
-            background: #4CAF50;
-            color: white;
-            padding: 0.8rem 1.5rem;
+        .indicator {
+            width: 0.75rem;
+            height: 0.75rem;
+            border-radius: 50%;
             border: none;
-            border-radius: 6px;
             cursor: pointer;
-            transition: transform 0.2s ease;
-            width: 100%;
+            transition: background-color 0.3s ease;
+            background: #4b5563;
         }
 
-        .contact-form button:hover {
+        .indicator.active {
+            background: #4ade80;
+        }
+
+        /* Contact Form */
+        .contact-section {
+            margin-top: 2rem;
+            background: rgba(31, 41, 55, 0.5);
+            border: 1px solid #374151;
+            border-radius: 0.75rem;
+            padding: 2rem;
+        }
+
+        .contact-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #4ade80;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-label {
+            display: block;
+            color: #4ade80;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-input,
+        .form-textarea {
+            width: 100%;
+            padding: 0.75rem;
+            background: #1f2937;
+            border: 1px solid #374151;
+            border-radius: 0.375rem;
+            color: white;
+            font-family: 'Inter', sans-serif;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-input:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: #4ade80;
+        }
+
+        .form-input::placeholder,
+        .form-textarea::placeholder {
+            color: #9ca3af;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: #22c55e;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 0.375rem;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background: #16a34a;
             transform: scale(1.05);
         }
 
-        .contact-image {
-            border-radius: 12px;
-            min-height: 200px;
-            overflow: hidden;
-        }
-
-        .contact-image img {
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover;
-            display: block;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(4px);
         }
 
-        @keyframes slideInFromLeft {
-            0% {
-                transform: translateX(-100%);
-                opacity: 0;
-            }
-            100% {
-                transform: translateX(0);
-                opacity: 1;
-            }
+        .modal.show {
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
+        .modal-content {
+            max-width: 90vw;
+            max-height: 90vh;
+            position: relative;
+            background: #000000;
+            border: 1px solid #374151;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+        }
+
+        .modal-header {
+            padding-bottom: 1rem;
+        }
+
+        .modal-title {
+            color: white;
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        .modal-image {
+            width: 100%;
+            height: auto;
+            max-height: 70vh;
+            object-fit: contain;
+            border-radius: 0.5rem;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            width: 2rem;
+            height: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0.25rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .close-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Animations */
         @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        /* Color Scheme 1: Default Scheme */
-        /* .left { background: #ffffff; }
-        .middle { background: #333333; }
-        .right { background: #0a0a0a; } */
-
-        /* Color Scheme 2: Light Grey Scheme */
-        /* .left { background: #ffffff; }
-        .middle { background: #333333; }
-        .right { background: #1a1a1a; } */
-
-        /* Color Scheme 3: Blue-Tinted Scheme */
-        .left { background: #ffffff; }
-        .middle { background: #333333; } /* Dark Grey */
-        .right { background: #0a0a0a; } /* Deep Black */
-
-        @media (min-width: 1200px) {
-            .container {
-                padding: 1.5rem; /* Reduced padding to allow containers to take more space */
-                gap: 0.5rem; /* Further reduced gap for desktop */
+            from {
+                opacity: 0;
+                transform: translateY(20px);
             }
-            .left, .middle, .right {
-                padding: 3rem; /* Increased padding for a bolder look on desktop */
-            }
-            .slide img {
-                max-width: 900px;
-            }
-            .middle img {
-                max-width: 700px;
+            to {
+                opacity: 1;
+                transform: translateY(0);
             }
         }
 
+        /* Responsive Design */
         @media (max-width: 1024px) {
-            .container {
+            .main-container {
                 grid-template-columns: 1fr 2fr;
-                padding: 1.5rem;
+                gap: 1rem;
             }
-            .right { 
+            
+            .portfolio-section {
                 grid-column: 1 / -1;
             }
-            .left img {
-                max-width: 300px;
+
+            .card-content {
+                padding: 1.5rem;
             }
-            .slide img {
-                max-width: 600px;
+
+            .slideshow-container {
+                margin: 0 3rem;
             }
-            .middle img {
-                max-width: 500px;
+
+            /* Adjust navigation buttons for tablet */
+            .prev-btn {
+                left: 0;
+            }
+
+            .next-btn {
+                right: 0;
             }
         }
 
         @media (max-width: 768px) {
-            .container {
+            .main-container {
                 grid-template-columns: 1fr;
-                padding: 1rem;
+                padding: 0.5rem;
             }
-            .left {
-                justify-content: center;
+            
+            .profile-section,
+            .bio-section,
+            .portfolio-section {
+                padding: 1.5rem;
             }
-            .left, .middle, .right {
-                padding: 1.5rem; /* Adjusted padding for smaller screens */
+            
+            .slideshow-container {
+                margin: 0 2rem;
             }
-            .left img {
-                max-width: 100%;
-                width: 80%;
-                margin: 0 auto;
-            }
-            .contact-container {
-                grid-template-columns: 1fr;
-            }
-            .prev, .next {
-                font-size: 1.2rem;
-                padding: 0.3rem 0.8rem;
-            }
-            .slide img {
-                max-width: 100%;
-            }
-            .middle img {
-                max-width: 100%;
-                width: 80%;
-                margin: 0 auto;
-            }
-        }
-
-        @media (max-width: 480px) {
+            
             nav {
                 padding: 1rem;
                 gap: 1rem;
             }
-            .left img {
-                width: 100%;
+
+            .card-content {
+                padding: 1rem;
             }
-            .slide img {
-                max-width: 100%;
+        }
+
+        @media (max-width: 480px) {
+            .slideshow-container {
+                margin: 0 1.5rem;
             }
-            .middle img {
-                width: 100%;
+            
+            .nav-btn {
+                width: 2rem;
+                height: 2rem;
+                font-size: 1.25rem;
+            }
+
+            .card-content {
+                padding: 0.75rem;
             }
         }
     </style>
 </head>
 <body>
+    <!-- Navigation -->
     <nav>
-        <a href="https://www.linkedin.com/in/macfrancis-belchi-8125a28b" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <a href="mailto:macfrancis.belchi@outlook.com">Email</a>
+        <a href="https://www.linkedin.com/in/macfrancis-belchi-8125a28b" target="_blank" rel="noopener noreferrer">
+            <span>🔗</span> LinkedIn
+        </a>
+        <a href="mailto:macfrancis.belchi@outlook.com">
+            <span>✉️</span> Email
+        </a>
     </nav>
 
-    <div class="container">
-        <div class="left">
-            <img src="20221108_111350~2.jpg" alt="Macfrancis Belchi">
+    <!-- Main Content -->
+    <div class="main-container">
+        <!-- Profile Section -->
+        <div class="profile-section">
+            <img src="20221108_111350~2.jpg" 
+                 alt="Macfrancis Belchi" 
+                 class="profile-image">
         </div>
 
-        <div class="middle">
-            <h1>Macfrancis Belchi</h1>
-            <p>Systems Administrator specializing in managing complex server environments. Expert in deploying and administering virtual machines across Windows and Linux domains.</p>
-            <p>Skilled in network security (Cisco, FortiGate), monitoring platforms (Centreon, Zabbix), and backup solutions (Veeam). Proficient in Microsoft Intune, Azure, and M365 administration.</p>
-            <img src="project3.jpg" alt="Project 3">
+        <!-- Bio Section -->
+        <div class="bio-section">
+            <h1 class="bio-title">Macfrancis Belchi</h1>
+            <p class="bio-text">
+                Systems Administrator specializing in managing complex server environments. Expert in deploying and administering virtual machines across Windows and Linux domains.
+            </p>
+            <p class="bio-text">
+                Skilled in network security (Cisco, FortiGate), monitoring platforms (Centreon, Zabbix), and backup solutions (Veeam). Proficient in Microsoft Intune, Azure, and M365 administration.
+            </p>
+            <img src="project3.jpg" 
+                 alt="Technology setup" 
+                 class="bio-image">
         </div>
 
-        <div class="right">
-            <div class="portfolio-title">
-                <h2>Work Portfolio</h2>
+        <!-- Portfolio Section -->
+        <div class="portfolio-section">
+            <div class="portfolio-header">
+                <h2 class="portfolio-title">Work Portfolio</h2>
             </div>
-            <div class="slideshow">
-                <button class="prev" aria-label="Previous Slide">❮</button>
-                <div class="slide active">
-                    <h3>🎯 Welcome to my Portfolio 📌</h3>
-                    <p>Here you will find a visually engaging snippet slideshow of my projects that highlight my expertise in
-                       enterprise administration, system development, and internal IT solutions.</p>
-                    <p>Each project showcases how organizations can leverage the value I bring for efficiency and enhanced workflows.</p>
-                    <img src="p7.jpg" alt="IT Administration and Security Platforms" loading="lazy">
-                </div>    
-                <div class="slide">  
-                    <h3>🔹 Multi-Platform IT Administration & Security</h3>
-                    <p>🌐 Proficient in Salesforce, Confluence, Jira, Manage Engine, ServiceNow, ESET, M365, SentinelOne, Azure, GCP, AWS, NetScaler, Fortinet, Zscaler, and Cisco.</p>
-                    <p>🛠️ Experienced in cross-platform troubleshooting and security compliance.</p>
-                    <img src="p3.jpg" alt="IT Administration and Security Platforms" loading="lazy">
-                </div>
-                <div class="slide">
-                    <h3>🔹 Asset Request Form</h3>
-                    <p>📄 Developed a Power Apps-based form for IT asset requests.</p>
-                    <p>🚀 Integrated into Microsoft Teams for easy access and rapid handling.</p>
-                    <p>🔄 Uses Power Automate to streamline approval workflows.</p>
-                    <p>✅ Enhances efficiency in virtual machine provisioning.</p>
-                    <img src="p5.jpg" alt="Asset Request Form in Power Apps" loading="lazy">
-                </div>
-                <div class="slide">
-                    <h3>🔹 Real-Time Asset Inventory Portal</h3>
-                    <p>🌐 Collaborated on a centralized asset inventory portal for IT visibility.</p>
-                    <p>📊 Provides real-time tracking of servers, hosts, domains, and configurations.</p>
-                    <p>🛠️ Enables IT teams to monitor and manage assets effectively.</p>
-                    <p>📈 Supports comprehensive asset insights, ✨ Bringing Innovation to IT Solutions.</p>
-                    <img src="p4.jpg" alt="Real-Time Asset Inventory Portal" loading="lazy">
-                </div>
-                <div class="slide">
-                    <h3>🔹 Helpdesk Ticketing System</h3>
-                    <p>🖥️ Designed a user-friendly ticketing system for seamless IT support.</p>
-                    <p>🔗 Integrated with Microsoft Teams for direct technician communication.</p>
-                    <p>📊 Uses Microsoft Dataverse for secure data management.</p>
-                    <p>⚙️ Uses automated alerts for ticket tracking and escalation.</p>
-                    <img src="p6.jpg" alt="Helpdesk Ticketing System in Microsoft Power Apps" loading="lazy">
-                </div>
-                <div class="slide">
-                    <div class="contact-container">
-                        <div class="contact-form">
-                            <h2>Get in Touch</h2>
-                            <form action="https://formspree.io/f/xeoajrnr" method="POST">
-                                <label for="name">Your Name</label>
-                                <input type="text" id="name" name="name" placeholder="Your Name" required>
-                                <label for="email">Your Email</label>
-                                <input type="email" id="email" name="email" placeholder="Your Email" required>
-                                <label for="message">Your Message</label>
-                                <textarea id="message" name="message" placeholder="Your Message" rows="4" required></textarea>
-                                <button type="submit">Send Message</button>
-                            </form>
+
+            <div class="portfolio-card">
+                <div class="card-content">
+                    <div class="slideshow-container">
+                        <button class="nav-btn prev-btn" onclick="changeSlide(-1)">❮</button>
+                        
+                        <!-- Slide 1 -->
+                        <div class="slide active">
+                            <h3 class="slide-title">🎯 Welcome to my Portfolio 📌</h3>
+                            <p class="slide-text">Here you will find a visually engaging snippet slideshow of my projects that highlight my expertise in enterprise administration, system development, and internal IT solutions.</p>
+                            <p class="slide-details">Each project showcases how organizations can leverage the value I bring for efficiency and enhanced workflows.</p>
+                            <img src="p7.jpg" 
+                                 alt="Welcome Portfolio" 
+                                 class="slide-image"
+                                 onclick="openModal(this.src)">
                         </div>
-                        <div class="contact-image">
-                            <img src="me2.jpg" alt="Macfrancis Belchi Contact Image" loading="lazy">
+
+                        <!-- Slide 2 -->
+                        <div class="slide">
+                            <h3 class="slide-title">🔹 Multi-Platform IT Administration & Security</h3>
+                            <p class="slide-text">🌐 Proficient in Salesforce, Confluence, Jira, Manage Engine, ServiceNow, ESET, M365, SentinelOne, Azure, GCP, AWS, NetScaler, Fortinet, Zscaler, and Cisco.</p>
+                            <p class="slide-details">🛠️ Experienced in cross-platform troubleshooting and security compliance.</p>
+                            <img src="p3.jpg" 
+                                 alt="IT Administration Platforms" 
+                                 class="slide-image"
+                                 onclick="openModal(this.src)">
                         </div>
+
+                        <!-- Slide 3 -->
+                        <div class="slide">
+                            <h3 class="slide-title">🔹 Asset Request Form</h3>
+                            <p class="slide-text">📄 Developed a Power Apps-based form for IT asset requests integrated into Microsoft Teams for easy access and rapid handling.</p>
+                            <p class="slide-details">🔄 Uses Power Automate to streamline approval workflows. ✅ Enhances efficiency in virtual machine provisioning.</p>
+                            <img src="p5.jpg" 
+                                 alt="Asset Request Form" 
+                                 class="slide-image"
+                                 onclick="openModal(this.src)">
+                        </div>
+
+                        <!-- Slide 4 -->
+                        <div class="slide">
+                            <h3 class="slide-title">🔹 Real-Time Asset Inventory Portal</h3>
+                            <p class="slide-text">🌐 Collaborated on a centralized asset inventory portal for IT visibility with real-time tracking of servers, hosts, domains, and configurations.</p>
+                            <p class="slide-details">🛠️ Enables IT teams to monitor and manage assets effectively. 📈 Supports comprehensive asset insights, ✨ Bringing Innovation to IT Solutions.</p>
+                            <img src="p4.jpg" 
+                                 alt="Asset Inventory Portal" 
+                                 class="slide-image"
+                                 onclick="openModal(this.src)">
+                        </div>
+
+                        <!-- Slide 5 -->
+                        <div class="slide">
+                            <h3 class="slide-title">🔹 Helpdesk Ticketing System</h3>
+                            <p class="slide-text">🖥️ Designed a user-friendly ticketing system for seamless IT support integrated with Microsoft Teams for direct technician communication.</p>
+                            <p class="slide-details">📊 Uses Microsoft Dataverse for secure data management. ⚙️ Uses automated alerts for ticket tracking and escalation.</p>
+                            <img src="p6.jpg" 
+                                 alt="Helpdesk Ticketing System" 
+                                 class="slide-image"
+                                 onclick="openModal(this.src)">
+                        </div>
+
+                        <button class="nav-btn next-btn" onclick="changeSlide(1)">❯</button>
+                    </div>
+
+                    <!-- Slide Indicators -->
+                    <div class="slide-indicators">
+                        <button class="indicator active" onclick="currentSlide(1)"></button>
+                        <button class="indicator" onclick="currentSlide(2)"></button>
+                        <button class="indicator" onclick="currentSlide(3)"></button>
+                        <button class="indicator" onclick="currentSlide(4)"></button>
+                        <button class="indicator" onclick="currentSlide(5)"></button>
                     </div>
                 </div>
-                <button class="next" aria-label="Next Slide">❯</button>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="contact-section">
+                <h3 class="contact-title">Get in Touch</h3>
+                <form action="https://formspree.io/f/xeoajrnr" method="POST">
+                    <div class="form-group">
+                        <label for="name" class="form-label">Your Name</label>
+                        <input type="text" id="name" name="name" placeholder="Your Name" required class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="form-label">Your Email</label>
+                        <input type="email" id="email" name="email" placeholder="Your Email" required class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label for="message" class="form-label">Your Message</label>
+                        <textarea id="message" name="message" placeholder="Your Message" rows="4" required class="form-textarea"></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
             </div>
         </div>
     </div>
 
+    <!-- Modal for Image Expansion -->
+    <div id="imageModal" class="modal">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal()">&times;</button>
+            <div class="modal-header">
+                <h3 class="modal-title">Project Image</h3>
+            </div>
+            <img id="modalImage" src="" alt="Expanded project view" class="modal-image">
+        </div>
+    </div>
+
     <script>
+        let slideIndex = 1;
         const slides = document.querySelectorAll('.slide');
-        const prevBtn = document.querySelector('.prev');
-        const nextBtn = document.querySelector('.next');
-        let currentSlide = 0;
+        const indicators = document.querySelectorAll('.indicator');
 
         function showSlide(index) {
+            // Hide all slides
             slides.forEach(slide => slide.classList.remove('active'));
-            slides[index].classList.add('active');
+            indicators.forEach(indicator => indicator.classList.remove('active'));
+            
+            // Show current slide
+            slides[index - 1].classList.add('active');
+            indicators[index - 1].classList.add('active');
         }
 
-        prevBtn.addEventListener('click', () => {
-            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-            showSlide(currentSlide);
+        function changeSlide(direction) {
+            slideIndex += direction;
+            if (slideIndex > slides.length) {
+                slideIndex = 1;
+            }
+            if (slideIndex < 1) {
+                slideIndex = slides.length;
+            }
+            showSlide(slideIndex);
+        }
+
+        function currentSlide(index) {
+            slideIndex = index;
+            showSlide(slideIndex);
+        }
+
+        function openModal(imageSrc) {
+            const modal = document.getElementById('imageModal');
+            const modalImage = document.getElementById('modalImage');
+            modal.classList.add('show');
+            modalImage.src = imageSrc;
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('imageModal');
+            modal.classList.remove('show');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside the image
+        document.getElementById('imageModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
         });
 
-        nextBtn.addEventListener('click', () => {
-            currentSlide = (currentSlide + 1) % slides.length;
-            showSlide(currentSlide);
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
         });
+
+        // Auto-advance slides (optional)
+        // setInterval(() => {
+        //     changeSlide(1);
+        // }, 10000);
     </script>
 </body>
 </html>
